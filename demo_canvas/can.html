@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画图</title>
+	<style>
+	#myinfo{
+		width: 600px;
+		height: 600px;
+		background: #fff;
+		margin: 0 auto;
+	}
+	h1{
+		text-align: center;
+	}
+	#mycvs{
+		border: 10px solid #000;
+	}
+	.tool{
+		height:50px;
+	}
+	.cleartool{
+		cursor: pointer;
+		float: left;
+		margin-left: 100px;
+		margin-right: 80px;
+	}
+	</style>
+</head>
+<body>
+	<div id="myinfo">
+		<canvas width="300" height="200" id="mycvs"></canvas>
+		<div class="tool">
+			<div class="cleartool" style="margin-top:20px">橡皮</div>
+		</div>
+	</div>
+	<script>
+	var mycvs=document.getElementById('mycvs')
+	var ctx=mycvs.getContext("2d")
+	var flg=false;
+
+	ctx.lineJoin = "round";
+	ctx.lineCap = "round";
+	ctx.lineWidth=1;
+	ctx.globalCompositeOperation="xor";
+	mycvs.onmousedown=function(e){
+		var x=e.offsetX,
+			y=e.offsetY;
+			flg=true;
+			ctx.beginPath()
+			ctx.moveTo(x,y)
+	}
+	mycvs.onmousemove=function(e){
+		var x=e.offsetX,
+			y=e.offsetY;
+
+		if(flg){
+			ctx.lineTo(x,y)
+			ctx.stroke()
+		}
+	}
+	mycvs.onmouseup=function(){
+		flg=false
+	}
+
+	var clearTool = document.querySelector( ".cleartool" );
+
+	clearTool.onclick = function(){
+		ctx.strokeStyle = "#fff";
+		ctx.lineWidth = 20;
+	}
+	</script>
+</body>
+</html>

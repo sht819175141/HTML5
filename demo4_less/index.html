@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.wrap{
+			height:500px;
+			width:500px;
+			background: #ccc;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: space-around; 
+    		justify-content: space-between;
+
+    		/*
+    			flex-direction: row | row-reverse | column | column-reverse
+				justify-content: flex-start | flex-end | center | space-between | space-around
+    		*/
+		}
+		.one{
+			height: 50px;
+			width:50px;
+			background: red;
+		}
+		.two{
+			height: 50px;
+			width:50px;
+			background: orange;
+		}
+		.three{
+			height: 50px;
+			width:50px;
+			background: yellow;
+		}
+		.four{
+			height: 50px;
+			width:50px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="one"></div>
+		<div class="two"></div>
+		<div class="three"></div>
+		<div class="four"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<form id="myform">
+		<input type="text" name="text" autofocus />
+		<input type="url" name="url"/> url格式地址
+		<input type="tel" name="tel" placeholder="请输入您的电话号码"/> 电话
+		<input type="email" name="email"/> 邮箱地址
+		<input type="number" name="number"/> 数值
+		<input type="range" name="range" step="100" min="0" max="1000"/> 滑块
+		<input type="color" name="color"/> 选择颜色
+		<input type="file" name="file"/> 选择文件
+		<input type="search" name="search"/> 查找
+		<button>点击</button>
+		<input type="text" list="w3cmm" auotcomplete="on"/>
+		<datalist id="w3cmm">
+			<option value="中国北京">中国北京</option>
+			<option value="河南济源">河南济源</option>
+			<option value="济源思礼">济源思礼</option>
+		</datalist>
+	</form>
+	<input type="submit" name="submit" form="myform"/>
+</body>
+</html>

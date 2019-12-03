@@ -1,0 +1,29 @@
+.form{
+	width:80%;
+	height:200px;
+	margin:0 auto;
+	padding:5px;
+	border:1px solid #ccc;
+	border-radius:10px;
+	background:#fff;
+	p{
+		width:100%;
+		height:40px;
+		display:flex;
+		border-bottom:1px solid #ccc;
+		line-height:40px;
+		input{
+			border:0;
+			background:transparent;
+			flex:1;
+		}
+	}
+}
+.footer{
+	width:80%;
+	height:60px;
+	background:#E2E2E2;
+	margin:0 auto;
+	text-align:center;
+	line-height:60px;
+}

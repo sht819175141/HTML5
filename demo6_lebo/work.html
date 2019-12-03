@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+		<header class="header">
+			<img src="images/music.jpg" alt="">
+			<button class="btn">立即下载</button>
+		</header>
+		<section class="main">
+				<div class="nav">
+					<h3 class="bg">乐播频道</h3>
+					<ul class="list">
+
+					</ul>
+				</div>
+				 <div class="section">
+					<h3 class="bg">小编推荐</h3>
+						<div class="pic">
+
+						</div>
+				</div>
+				<div class="section">
+					<h3 class="bg">新晋节目榜</h3>
+					<div class="pic1 audioGroup">
+						
+					</div>
+				</div>
+
+		</section>
+		<footer class="footer audioBox" style="display:none;">
+			<div class="progress-box">
+				<span class="progress-bar">
+					
+				</span>
+			</div>
+			<audio src="" id="myAudio" style="display:none;"></audio>
+			<div class="audioMain">
+				<dl class="audioInfor">
+					<dt><img src="http://a.hiphotos.baidu.com/ting/whcrop%3D100%2C100/sign=1582c404b6b7d0a27b9c52dfa49f4b38/5ab5c9ea15ce36d36d8f2b863ef33a87e850b1f9.jpg"/></dt>
+					<dd>
+						<h2 class="groupName">念念不忘老歌集</h2>
+						<h3 class="audioName">葫芦娃</h3>
+					</dd>
+				</dl>
+				<div class="audioTool">
+					<a href="javascript:;" class="prevAudio">
+						<i class="fa fa-step-backward"></i>
+					</a>
+					<a href="javascript:;" class="playToggle stop">
+						<i class="fa fa-play"></i>
+					</a>
+					<a href="javascript:;" class="nextAudio">
+						<i class="fa fa-step-forward"></i>
+					</a>
+					<a href="javascript:;" class="audioList">
+						<i class="fa fa-reorder"></i>
+					</a>
+				</div>
+			</div>
+		</footer>
+		<style type="text/css">
+			.audioBox{
+				width: 100%;
+				height: 60px;
+			}
+			.audioBox .progress-box{
+				width: 100%;
+				height: 3px;
+				background: #eee;
+			}
+			.audioBox .progress-box .progress-bar{
+				height: 3px;
+				width:0;
+				background: #0ff;
+				display: block;
+			}
+			.audioBox .audioMain{
+				width: 100%;
+				height: 57px;
+				background: #fff;
+				overflow: hidden;
+				display: -webkit-box;
+			}
+			.audioInfor{
+
+				-webkit-box-flex:1;
+				display: -webkit-box;
+			}
+			.audioInfor dt{
+				width:57px;
+				height: 57px;
+			}
+			.audioInfor dt img{
+				display: block;
+				width:57px;
+				height: 57px;
+			}
+			
+			.audioInfor dd{
+				-webkit-box-flex:1;
+				display: -webkit-box;
+				-webkit-box-orient:vertical;
+				-webkit-box-pack:center;
+				padding-left: 10px;
+			}
+			.audioInfor dd h2{
+				font-size: 14px;
+				color: #000;
+				font-weight: normal;
+			}
+			.audioInfor dd h3{
+				font-size: 12px;
+				color: #ccc;
+				font-weight: normal;
+			}
+
+			.audioTool{
+				display: -webkit-box;
+				-webkit-box-align:center;
+			}
+
+			.audioTool a{
+				width: 25px;
+				height: 25px;
+				display: block;
+				margin: 0 5px;
+				display: -webkit-box;
+				-webkit-box-pack:center;
+				-webkit-box-align:center;
+				color: #000;
+			}
+		</style>
+</div>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/js.js"></script>
+<script type="text/javascript">
+	
+	var audioTool = function( audio,audioList ){
+		this.audio = $(audio);
+		this.audioList = audioList || [];
+		this.playIndex =0;
+		this.init();
+	}
+	audioTool.prototype = {
+
+		init : function(){
+			$( ".audioBox" ).show();
+			this.addEvent();
+		},
+
+		addEvent : function(){
+			var that = this;
+			$( ".audioTool .prevAudio" ).on("click",function(){
+				that.prev();
+			})
+			$( ".audioTool .playToggle" ).on("click",function(){
+				if( $(this).hasClass("play") ){
+					$(this).addClass("stop").removeClass("play");
+					
+					$(this).find("i").addClass( "fa-play" ).removeClass("fa-pause")
+					that.stop();
+				}else{
+					$(this).addClass("play").removeClass("stop")
+					$(this).find("i").addClass( "fa-pause" ).removeClass("fa-play")
+					that.play();
+				}
+			})
+			$( ".audioTool .nextAudio" ).on("click",function(){
+				that.next();
+			})
+			$( ".audioTool .audioList" ).on("click",function(){
+				
+			})
+		},
+
+		setAudioList : function( audioList ){
+			this.audioList = audioList;
+			this.playIndex =0;
+			this.gotoPlay( this.playIndex );
+		},
+
+		gotoPlay : function(index){
+			var that = this;
+			var song_id = this.audioList[index].song_id;
+			$.ajax({
+				url : "http://leboapi.baidu.com/leboapi/song",
+				data : {
+					type:"getSongFileLink",
+					song_id:song_id,
+					linktype:1,
+					args:"baseinfo,pic,album.pic",
+					apiver:2,
+					from:"lebowebapp",
+					terminal:"pcweb",
+					app:121
+				},
+				dataType : "jsonp",
+				success : function(data){
+					var audioSrc = data.data.songfile[0].songfile_link;
+					that.audio.attr("src",audioSrc);
+					$( ".audioTool .playToggle" ).click();
+				}
+			})
+			
+		},
+
+		play : function(){
+			this.audio[0].play();
+		},
+
+		stop : function(){
+			this.audio[0].pause();
+		},
+
+		next : function(){
+			this.playIndex++;
+			this.gotoPlay( this.playIndex )
+		},
+
+		prev : function(){
+			this.playIndex--;
+			this.gotoPlay(this.playIndex)
+		},
+		range : function(){
+			this.audio[0].range();
+		}
+	}
+
+	var audioTools = new audioTool( "#myAudio",[]);
+
+	$( ".audioGroup" ).on( "click","dl",function(){
+		var album_id = $(this).attr("albumId")
+		$.ajax({
+			url : "http://leboapi.baidu.com/leboapi/album",
+			data : {
+				type:"getAlbumDetail",
+				start:1,
+				limit:20,
+				args:"*,songlist.song.pic",
+				album_id:album_id,
+				sort:0,
+				apiver:2,
+				from:"lebowebapp",
+				terminal:"pcweb",
+				app:121
+			},
+			dataType : "jsonp",
+			success : function(data){
+				audioTools.setAudioList( data.data.song_list )
+			}
+		})
+	} )
+
+</script>
+</body>
+</html>

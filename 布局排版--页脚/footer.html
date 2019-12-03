@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #container {
+            /*保证footer是相对于container位置绝对定位*/
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            /*设置padding-bottom值大于等于footer的height值，以保证main的内容能够全部显示出来而不被footer遮盖；*/
+            padding-bottom: 100px;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            height: 200px;
+            background: #999;
+        }
+
+        .main {
+            width: 100%;
+            height: 200px;
+            background: orange;
+        }
+
+        footer {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>HEADER</header>
+        <section class="main">MAIN</section>
+        <footer>FOOTER</footer>
+    </div>
+</body>
+
+</html>

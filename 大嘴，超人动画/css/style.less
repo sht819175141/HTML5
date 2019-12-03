@@ -1,0 +1,109 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+.wrap{
+	background:url(../img/bj2.jpg);
+	background-size:cover;
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+	.content{
+		width:100%;
+		height:100%;
+		display:-webkit-box;
+		margin-top:100px;
+		display:inline-block;
+		position:relative;
+		.bgimg{
+			width:100%;
+			height:100%;
+		}
+		.round{
+			position:absolute;
+			width:15%;
+			height:auto;
+			left:7.3%;
+			
+		}
+		.round:hover{
+			-webkit-animation:xuan 2s linear infinite;
+		}
+		@-webkit-keyframes xuan{
+			0%{
+				-webkit-transform:rotate(0deg);
+			}
+			12.499999%{
+				-webkit-transform:rotate(0deg);
+			}
+			12.5%{
+				-webkit-transform:rotate(45deg);
+			}
+			24.9999%{
+				-webkit-transform:rotate(45deg);
+			}
+			25%{
+				-webkit-transform:rotate(90deg);
+			}
+			37.499999%{
+				-webkit-transform:rotate(90deg);
+			}
+			37.5%{
+				-webkit-transform:rotate(135deg);
+			}
+			49.99999%{
+				-webkit-transform:rotate(135deg);
+			}
+			50%{
+				-webkit-transform:rotate(180deg);
+			}
+			62.49999%{
+				-webkit-transform:rotate(180deg);
+			}
+			62.5%{
+				-webkit-transform:rotate(225deg);
+			}
+			74.99999%{
+				-webkit-transform:rotate(225deg);
+			}
+			75%{
+				-webkit-transform:rotate(270deg);
+			}
+			87.49999%{
+				-webkit-transform:rotate(270deg);
+			}
+			87.5%{
+				-webkit-transform:rotate(315deg);
+			}
+			99.999999%{
+				-webkit-transform:rotate(315deg);
+			}
+			100%{
+				-webkit-transform:rotate(360deg);
+			}
+
+		}
+		
+		
+	}
+	.footer{
+		width:30%;
+		position:absolute;
+		bottom:0;
+		left:35%;
+		-webkit-transform:translateY(100%);
+		-webkit-animation:yidong .5s ease both;
+	}
+	.footer img{
+		width:100%;
+	}
+	@-webkit-keyframes yidong{
+		0%{
+			-webkit-transform:translateY(100%);
+		}
+		100%{
+			-webkit-transform:translateY(0);
+		}
+	}
+}

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<header class="head">
+			<div class="left_poin">
+				<img src="img/a93.png" class="pic"/>
+			</div>
+			<h2 class="tip">还款</h2>
+		</header>
+		<div class="main">
+			<div class="nav-content">
+				<a href="index.html">
+					<div class="line">
+						<span class="bg"></span>
+						<span class="bg"></span>
+					</div>
+					<dl>
+						<dt><img src="img/a98.png" alt="" /></dt>
+						<dd>收款方</dd>
+					</dl>
+				</a>
+				<a href="javascript:;">
+					<div class="line">
+						<span class="bg"></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a97.png" alt="" /></dt>
+						<dd>付款方</dd>
+					</dl>
+				</a>
+				<a href="ok.html">
+					<div class="line">
+						<span></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a96.png" alt="" /></dt>
+						<dd>确认</dd>
+					</dl>
+				</a>
+				<a href="cannel.html">
+					<div class="line">
+						<span></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a95.png" alt="" /></dt>
+						<dd>完成</dd>
+					</dl>
+				</a>
+			</div>
+			<div class="form_content">
+				<form id="myform">
+					<p>
+						<label>银行:</label><input type="text" name="scard" />
+					</p>
+					<p>
+						<label>付款方卡号:</label><input type="text" name="user" placeholder="请输入15-20位银行卡"/>
+					</p>
+					<p>
+						<label>银行预留手机号:</label><input type="tel"  name="tel"/>
+					</p>
+
+					<p>
+						<label>验证码:</label><input type="text" name="user" />
+					</p>
+					<p>
+						<label>交易密码:</label><input type="number"  name="num"/>
+					</p>
+				</form>
+				<input type="submit" name="submit" value="下一步" class="submit" form="myform"/>
+			</div>
+			<footer class="footer">
+				<p class="info"> 
+					需要先通过中信银行柜面或网银专业版办理金融短信通业务并留存该手机号，或通过中信银行柜面或网银专业版签约办理无卡支付业务并预留手机号，如有疑问，请咨询发卡行95558
+				</p>
+			</footer>
+		</div>	
+	</div>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+	var checkValdata = function( id ){
+		this.form = document.querySelector( id );
+		this.formCheckList = this.form.querySelectorAll( "input" );
+		this.patternList = {
+			scard : {
+				tipText : "请输入正确卡号",
+				pattern :"^(\d{16}|\d{19})$"
+			},
+			user : {
+				tipText : "请输入正确的收款方姓名",
+				pattern : "^[a-zA-z][a-zA-Z0-9_]{2,9}$"
+			},
+			num  : {
+				tipText : "请输入正确的金额",
+				pattern : "^[\d]$"	
+			}
+		}
+		this.init();
+	};
+
+	checkValdata.prototype = {
+		init : function(){
+			this.setForm();
+			this.setPattern();
+		},
+		setForm : function(){
+			var that = this;
+			this.form.setAttribute( "novalidate",true );
+			this.form.onsubmit = function(){
+				return that.checkAll();
+			}
+		},
+
+		checkAll : function(){
+			var formCheckList = this.formCheckList;
+			var checkFlg = true;
+			for( var i=0; i<formCheckList.length; i++ ){
+				var checkJSON = this.check( formCheckList[i] )
+				if( !checkJSON.check ){
+					this.checkTip( formCheckList[i],checkJSON.type )
+					checkFlg = false;
+				}else{
+					formCheckList[i].innerText = "";
+				}
+			}
+			return checkFlg;
+		},
+
+		check : function( item ){
+			var pattern = item.getAttribute("pattern"),
+				required = item.getAttribute( "required");
+                
+			if( required != null ){  //必填项
+				if( item.value == "" ){ 
+					return {
+						type : 1,
+						check : false
+					}
+				}else{
+					return {
+						type : 2,
+						check : item.checkValidity()
+					}
+				}
+			}else{
+				if( item.value == "" ){
+					return {
+						type : 1,
+						check : true
+					}
+				}else{
+					if( pattern == null ){
+    					return {
+    						type : 1,
+    						check : true
+    					}
+    				}else{
+    					return {
+    						type : 2,
+    						check : item.checkValidity()
+    					}
+    				}
+				}
+			}
+		},
+
+		setPattern : function(){
+			var formCheckList = this.formCheckList;
+			for( var i=0; i<formCheckList.length; i++ ){
+				var type = formCheckList[i].type;
+				if ( !formCheckList[i].getAttribute( "pattern" ) ){
+					if( this.patternList[type] ){
+						formCheckList[i].setAttribute( "pattern",this.patternList[type].pattern )
+						formCheckList[i].setAttribute( "tipText",this.patternList[type].tipText )
+					}
+				}
+			}
+		},
+		checkTip : function( item,type ){
+			if( type == 1 ){
+				item.innerText = item.getAttribute("required");
+			}else{
+				item.innerText = item.getAttribute("tipText");
+			}
+		}
+	}
+	new checkValdata( "#wrap" );
+	$(".submit").on("click",function(){
+		location.href="ok.html";
+	})
+	</script>
+</body>
+</html>

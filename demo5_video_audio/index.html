@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		video{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<!--电影-->
+	<video src="./img/测是.mp4" controls="controls" width="1000" id="myVideo"></video>
+	
+	<video src="./img/arr.mkv" controls="controls" width="800" id=""></video>
+
+	<video width="600"  controls="controls">
+		<source src="http://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+		您的浏览器不支持 HTML5 video 标签。
+	  </video>
+	
+	<video  width="400"  controls="controls">
+		<source src="img/arr.mkv" type="video/mp4">
+	</video>
+
+	
+	<!-- <button id="play">播放</button>
+	<button id="pause">暂停</button>
+	<button id="go10">快进10秒</button>
+	<button id="back10">快退10秒</button>
+	<button id="rate1">播放速度+</button>
+	<button id="rate0">播放速度-</button>
+	<button id="volume1">声音+</button>
+	<button id="volume0">声音-</button>
+	<button id="muted1">静音</button>
+	<button id="muted0">解除静音</button>
+	<button id="full">全屏</button> -->
+	
+	<audio src="img/排骨教主 - 君临天下.mp3" controls="controls"></audio>
+	音乐
+	<audio controls="" src="img/acc.mp3"></audio>
+	
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+		var video = document.getElementById("myVideo");
+		console.log(video.currentSrc)
+			video.addEventListener( "error",function(){
+				var error = video.error;
+				switch( error.code ){
+					case 1 :
+						alert("加载异常，用户请求终止")
+					break;
+					case 2 :
+						alert("加载终止，网络错误")
+					break;
+					case 3 :
+						alert("加载完成，解码错误")
+					break;
+					case 4 :
+						alert("不支持的播放格式")
+					break;
+				}
+			},false )
+
+			video.addEventListener( "progress",function(){
+				var networkState = video.networkState;
+				switch( networkState ){
+					case 0 :
+						console.log("正在初始化。。")
+					break;
+					case 1 :
+						console.log("数据加载完成！")
+					break;
+					case 2 :
+						console.log("正在加载中。。")
+					break;
+					case 3 :
+						console.log("数据加载失败")
+					break;
+				}
+			},false )
+
+			//自写控制
+			$(document).ready(function(){  
+
+			    var video = $('#myVideo');
+			    
+			    $("#play").click(function(){  video[0].play();  });
+			    $("#pause").click(function(){ video[0].pause(); });
+			    $("#go10").click(function(){  video[0].currentTime+=10;  });
+			    $("#back10").click(function(){  video[0].currentTime-=10;  });
+			    $("#rate1").click(function(){  video[0].playbackRate+=2;  });
+			    $("#rate0").click(function(){  video[0].playbackRate-=2;  });
+			    $("#volume1").click(function(){  video[0].volume+=0.1;  });
+			    $("#volume0").click(function(){  video[0].volume-=0.1;  });
+			    $("#muted1").click(function(){  video[0].muted=true;  });
+			    $("#muted0").click(function(){  video[0].muted=false;  });
+
+			    $("#full").click(function(){ 
+			      	video[0].webkitEnterFullscreen(); // webkit类型的浏览器
+			      	video[0].mozRequestFullScreen();  // FireFox浏览器
+			    }); 
+			});
+  			$("#play").on("click",function(){
+  				$(this).css({"color":"red"})
+  			})
+	</script>
+</body>
+</html>

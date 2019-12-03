@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul li, ol li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+body, html, .wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  body .header, html .header, .wrap .header {
+    position: relative; }
+    body .header img, html .header img, .wrap .header img {
+      width: 100%;
+      height: 165px; }
+    body .header .btn, html .header .btn, .wrap .header .btn {
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 25px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      margin-left: -60px;
+      border: none;
+      background: rgba(255, 255, 255, 0.7);
+      color: darkorange;
+      font-size: 22px; }
+  body .main, html .main, .wrap .main {
+    overflow-y: auto;
+    padding: 0 10px;
+    width: 100%;
+    flex: 1;
+    background: #eee; }
+    body .main .nav, body .main .nav .pic .section, body .wrap .main .nav .pic .section, .wrap body .main .nav .pic .section, html .main .nav, html .main .nav .pic .section, html .wrap .main .nav .pic .section, .wrap html .main .nav .pic .section, .wrap .main .nav, .wrap .main .nav .pic .section {
+      width: 100%; }
+      body .main .nav h3, body .main .nav .pic .section h3, body .wrap .main .nav .pic .section h3, .wrap body .main .nav .pic .section h3, html .main .nav h3, html .main .nav .pic .section h3, html .wrap .main .nav .pic .section h3, .wrap html .main .nav .pic .section h3, .wrap .main .nav h3, .wrap .main .nav .pic .section h3 {
+        height: 30px;
+        line-height: 30px; }
+      body .main .nav .list, body .main .nav .pic .section .list, html .main .nav .list, html .main .nav .pic .section .list, .wrap .main .nav .list, .wrap .main .nav .pic .section .list {
+        width: 100%;
+        background: #fff;
+        margin: 10px 0; }
+        body .main .nav .list a, body .main .nav .pic .section .list a, html .main .nav .list a, html .main .nav .pic .section .list a, .wrap .main .nav .list a, .wrap .main .nav .pic .section .list a {
+          width: 25%;
+          height: 40px;
+          display: inline-block;
+          line-height: 40px;
+          text-align: center;
+          border: 1px solid #eee;
+          font-size: 14px; }
+      body .main .nav .pic, body .main .nav .pic .section .pic, html .main .nav .pic, html .main .nav .pic .section .pic, .wrap .main .nav .pic, .wrap .main .nav .pic .section .pic {
+        width: 100%;
+        margin-top: 10px; }
+        body .main .nav .pic div, body .main .nav .pic .section .pic div, html .main .nav .pic div, html .main .nav .pic .section .pic div, .wrap .main .nav .pic div, .wrap .main .nav .pic .section .pic div {
+          width: 100%;
+          height: 160px;
+          display: flex; }
+          body .main .nav .pic div dl, body .main .nav .pic .section .pic div dl, html .main .nav .pic div dl, html .main .nav .pic .section .pic div dl, .wrap .main .nav .pic div dl, .wrap .main .nav .pic .section .pic div dl {
+            flex: 1;
+            height: 140px;
+            margin-right: 5px; }
+            body .main .nav .pic div dl img, body .main .nav .pic .section .pic div dl img, html .main .nav .pic div dl img, html .main .nav .pic .section .pic div dl img, .wrap .main .nav .pic div dl img, .wrap .main .nav .pic .section .pic div dl img {
+              width: 100%; }
+            body .main .nav .pic div dl dt, body .main .nav .pic .section .pic div dl dt, html .main .nav .pic div dl dt, html .main .nav .pic .section .pic div dl dt, .wrap .main .nav .pic div dl dt, .wrap .main .nav .pic .section .pic div dl dt {
+              width: 100px;
+              height: 100px;
+              border: 1px solid #ccc; }
+            body .main .nav .pic div dl dd, body .main .nav .pic .section .pic div dl dd, html .main .nav .pic div dl dd, html .main .nav .pic .section .pic div dl dd, .wrap .main .nav .pic div dl dd, .wrap .main .nav .pic .section .pic div dl dd {
+              font-size: 12px; }
+        body .main .nav .pic .section .pic1 dl, html .main .nav .pic .section .pic1 dl, .wrap .main .nav .pic .section .pic1 dl {
+          margin-top: 10px;
+          width: 100%;
+          height: 100px;
+          display: flex;
+          border-bottom: 1px solid #ccc; }
+          body .main .nav .pic .section .pic1 dl dt, html .main .nav .pic .section .pic1 dl dt, .wrap .main .nav .pic .section .pic1 dl dt {
+            margin-right: 5px;
+            width: 80px; }
+            body .main .nav .pic .section .pic1 dl dt img, html .main .nav .pic .section .pic1 dl dt img, .wrap .main .nav .pic .section .pic1 dl dt img {
+              width: 100%; }
+          body .main .nav .pic .section .pic1 dl dd, html .main .nav .pic .section .pic1 dl dd, .wrap .main .nav .pic .section .pic1 dl dd {
+            width: 70%;
+            -webkit-flex-grow: 1; }
+            body .main .nav .pic .section .pic1 dl dd p, html .main .nav .pic .section .pic1 dl dd p, .wrap .main .nav .pic .section .pic1 dl dd p {
+              display: flex;
+              flex-direction: column; }
+              body .main .nav .pic .section .pic1 dl dd p span a, html .main .nav .pic .section .pic1 dl dd p span a, .wrap .main .nav .pic .section .pic1 dl dd p span a {
+                font-size: 12px;
+                display: inline-block; }
+                body .main .nav .pic .section .pic1 dl dd p span a:nth-child(1), html .main .nav .pic .section .pic1 dl dd p span a:nth-child(1), .wrap .main .nav .pic .section .pic1 dl dd p span a:nth-child(1) {
+                  color: orange;
+                  padding: 5px;
+                  border-radius: 5px;
+                  border: 1px solid orange;
+                  text-align: center;
+                  margin-right: 10px; }
+                body .main .nav .pic .section .pic1 dl dd p span a:nth-child(2), html .main .nav .pic .section .pic1 dl dd p span a:nth-child(2), .wrap .main .nav .pic .section .pic1 dl dd p span a:nth-child(2) {
+                  border: 1px solid #ccc;
+                  padding: 5px;
+                  border-radius: 5px;
+                  color: #999; }
+            body .main .nav .pic .section .pic1 dl dd h4, html .main .nav .pic .section .pic1 dl dd h4, .wrap .main .nav .pic .section .pic1 dl dd h4 {
+              font-size: 14px;
+              color: #999;
+              margin-bottom: 10px; }
+  body .footer, html .footer, .wrap .footer {
+    width: 100%;
+    height: 60px;
+    background: #fff; }
+
+/*# sourceMappingURL=style.css.map */

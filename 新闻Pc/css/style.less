@@ -1,0 +1,174 @@
+@media all and (min-width:1024px){
+	.wrap{
+		width:1440px;
+		height:900px;
+		margin:0 auto;
+	}
+	body,html{
+	width:100%;
+	height:100%;
+	background:#222222;
+	font-size:100px;
+}
+.wrap{
+	width:1440px;
+	height:900px;
+	margin:0 auto;
+}
+.header{
+	height:80px;
+	background:#000;
+	font-size:0.12rem;
+	ul{
+		height:37px;
+		padding:20px 30px;
+		line-height:40px;
+		li{
+			color:#b2b2b2;
+			float:left;
+			width:87px;
+			padding:0px 20px;
+			text-align:center;
+			&:hover{
+				background:url(../images/boeder.png) no-repeat center bottom;
+				color:#fff;
+			}
+		}
+	}
+}
+.main{
+	width:100%;
+	height:820px;
+	overflow:hidden;
+	.left{
+		width:1000px;
+		float:left;
+		img{
+			width:100%;
+		}
+	}
+	.right{
+		width:440px;
+		height:820px;
+		float:right;
+		color:#959090;
+		font-size:0.14rem;
+		.border{
+			background:url(../images/border.png) no-repeat center top;
+			height:20px;
+			width:100%;
+			margin:30px 0;
+		}
+		.right1{
+			width:357px;
+			margin:0px auto;
+			height:780px;
+			h4{
+				color:#fff;
+				font-size:0.16rem;
+			}
+			.aside{
+				margin:20px 0;
+				line-height:25px;
+				
+			}
+			.asides{
+				width:100%;
+				.lists{
+					width:100%;
+					height:245px;
+					img{
+						display:block;
+						float:left;
+						margin:17px 17px 0px 0 ; 
+					}
+				}
+				ul{
+					padding-top:20px;
+					li{
+						line-height:25px;
+					}
+				}
+			}
+			
+		}
+	}
+}
+}
+
+@media all and (max-width:1023px){
+	.wrap{
+		width:100%;
+		height:100%;
+		background:#222222;
+	}
+	.header{
+		width:100%;
+		height:40px;
+		text-align:center;
+		line-height:40px;
+		ul{
+			width:100%;
+			height:40px;
+			overflow:hidden;
+			li{
+				width:100%;
+				color:#fff;
+			}
+		}
+	}
+	.main{
+		width:100%;
+		height:100%;
+		color:#959090;
+		.left{
+			width:100%;
+			img{
+				width:100%;
+			}
+		}
+		.right{
+			width:90%;
+			margin:0 auto;
+			.border{
+				background:url(../images/border.png) no-repeat center top;
+				height:10px;
+				margin:10px 0;
+			}
+
+
+		.right1{
+			h4{
+				color:#fff;
+				font-size:0.16rem;
+			}
+			.aside{
+				line-height:25px;
+				margin:10px 0;
+				
+			}
+			.asides{
+				width:100%;
+				.lists{
+					width:100%;
+					display:flex;
+					flex-wrap:wrap;
+					img{
+						display:block;
+						flex:1;
+						width:30%;
+						margin:4px;
+					}
+				}
+				ul{
+					padding-top:20px;
+					li{
+						line-height:25px;
+					}
+				}
+			}
+			
+		}
+		}
+	}
+}

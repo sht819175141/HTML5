@@ -1,0 +1,13 @@
+section {
+  width: 80%;
+  height: auto;
+  margin: 15px auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px; }
+  section ul {
+    width: 100%;
+    text-align: center;
+    line-height: 40px; }
+
+/*# sourceMappingURL=style3.css.map */

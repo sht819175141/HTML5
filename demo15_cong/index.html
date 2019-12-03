@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>第一</title>
+	<style>
+		*{
+			margin:0;
+			padding:0
+		}
+		html,body{
+			width:100%;
+			height:100%;
+		}
+		body{
+			position:relative;
+			background:url(images/P3-BG01.png);
+			background-size:cover;
+		}
+		.wen{
+			width:95%;
+			margin:15% auto;
+			display:block;
+		}
+		.wan{
+			position:absolute;
+			width:100px;
+			height:100px;
+			top:1%;
+			right:-5%;
+			animation:yi 3s linear forwards;
+		}
+
+		@-webkit-keyframes yi{
+			0%{
+				
+			}
+			30%{
+				opacity: 1;
+			}
+			50%{
+				opacity: 1;
+				position:absolute;
+				top:1%;
+				right:-5%;
+
+			}
+			100%{
+				position:absolute;
+				top:1%;
+				right:1%;
+			}
+		}
+		.wan .nv{
+			position: absolute;
+		    right: 55%;
+		    bottom: 27%;
+		    width: 22%;
+		}
+		.wan .q1{
+			position:absolute;
+			display:block;
+			left:32%;
+			top:-10%;
+			width:32%;
+			animation:fei1 7s linear 3s forwards;
+		}
+		@-webkit-keyframes fei1{
+			0%{top: -10%;}
+			10%{top: -16%; left:30%;}
+			30%{top: -35%; left:40%;}
+			60%{top: -69%;left:62%;}
+			100%{top: -150%;left:40%;}
+		}
+		.wan .q2{
+			position:absolute;
+			display:block;
+			left: 31%;
+   			top: -17%;
+			width:32%;
+			animation:fei2 6s linear 3s forwards;
+		}
+		@-webkit-keyframes fei2{
+			0%{top: -17%;}
+			10%{top: -35%; left:30%;}
+			30%{top: -55%; left:40%;}
+			60%{top: -88%;left:62%;}
+			100%{top: -150%;left:40%;}
+		}
+		.wan .q3{
+			position:absolute;
+			display:block;
+			left: 30%;
+		    top: -16%;
+		    width: 25%;
+		    animation:fei3 14s linear 3s forwards;
+		}
+		@-webkit-keyframes fei3{
+			0%{top: -16%;}
+			10%{top: -16%; left:30%;}
+			30%{top: -55%; left:40%;}
+			60%{top: -79%;left:62%;}
+			100%{top: -150%;left:40%;}
+		}
+		.wan .q7{
+			position:absolute;
+			display:block;
+			left: 23%;
+		    top: -21%;
+		    width: 32%;
+		    transform: rotate(-25deg);
+		    animation:fei7 10s linear 3s forwards;
+		}
+		@-webkit-keyframes fei7{
+			0%{top: -21%;}
+			10%{top: -26%; left:23%;}
+			30%{top: -30%; left:30%;}
+			60%{top: -59%;left:22%;}
+			100%{top: -150%;left:40%;}
+		}
+		.wan .q8{
+			position:absolute;
+			display:block;
+			left: 38%;
+		    top: -24%;
+		    width: 28%;
+		    transform: rotate(30deg);
+		    animation:fei8 8s linear 3s forwards;
+		}
+		@-webkit-keyframes fei8{
+			0%{top: -24%;}
+			10%{top: -26%; left:38%;}
+			30%{top: -70%; left:49%;}
+			60%{top: -89%;left:36%;}
+			100%{top: -150%;left:40%;}
+		}
+		.wan .q9{
+			position:absolute;
+			display:block;
+			left: 34%;
+		    top: -20%;
+		    width: 28%;
+		    transform: rotate(30deg);
+		    animation:fei9 8s linear 3s forwards;
+		}
+		@-webkit-keyframes fei9{
+			0%{top: -20%;}
+			10%{top: -40%; left:36%;}
+			30%{top: -60%; left:40%;}
+			60%{top: -80%;left:36%;}
+			100%{top: -150%;left:40%;}
+		}
+		.wan .q10{
+			position:absolute;
+			display:block;
+			left: 34%;
+		    top: 2%;
+		    width: 40%;
+		    animation:fei10 5s linear 3s forwards;
+		}
+		@-webkit-keyframes fei10{
+			0%{top: 2%;}
+			10%{top: -0%; left:36%;}
+			30%{top: -20%; left:38%;}
+			60%{top: -50%;left:39%;}
+			100%{top: -150%;left:40%;}
+		}
+	</style>
+
+</head>
+<body>
+<img src="images/P3-WZ01-new.png" alt="" class="wen">
+<div class="wan">
+	<img src="images/P3-Girl.png" alt="" class="nv">
+	<img src="images/P3-balloon01.png" alt="" class="q1">
+	<img src="images/P3-balloon02.png" alt="" class="q2">
+	<img src="images/P3-balloon03.png" alt="" class="q3">
+	<img src="images/P3-balloon02.png" alt="" class="q7">
+	<img src="images/P3-balloon03.png" alt="" class="q8">
+	<img src="images/P3-balloon03.png" alt="" class="q9">
+	<img src="images/P3-balloon01.png" alt="" class="q10">
+</div>
+
+</body>
+</html>

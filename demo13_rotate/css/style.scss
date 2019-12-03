@@ -1,0 +1,52 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.wrap{
+	width: 100%;
+	position: relative;
+	background:#FFF9E6;
+	img{
+		width:100%;
+		&.txt{
+			width:100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		&.cloud{
+			width:36%;
+		}
+		&.clods{
+			width:35%;
+		}
+	}
+	.main{
+		.earth{
+			width:63%;
+			position: absolute;
+			left: 20%;
+			top: 400%;
+		}
+		.star{
+			width:15%;
+			position: absolute;
+			left: 0%;
+			top: 581%;
+			animation: xuanzhuan 8s linear infinite; 
+		}
+			
+		@-webkit-keyframes xuanzhuan{
+			0%{
+				transform-origin: 340% 0%;
+				transform: rotate(0deg);
+				
+			}
+			100%{
+				transform-origin: 340% 0%;
+				transform: rotate(360deg);
+				
+			}
+		}
+	}
+}

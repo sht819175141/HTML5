@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画图</title>
+</head>
+<body>
+	<div id="myinfo">
+		
+	</div>
+	<script>
+	var mycvs=document.getElementById('mycvs')
+	var ctx=mycvs.getContext("2d")
+	var flg=false;
+
+	ctx.lineJoin = "round";
+	ctx.lineCap = "round";
+	ctx.lineWidth=1;
+
+	mycvs.onmousedown=function(e){
+		var x=e.offsetX,
+		y=e.offsetY;
+		flg=true;
+		ctx.beginPath()
+		ctx.moveTo(x,y)
+	}
+	mycvs.onmousemove=function(e){
+		var x=e.offsetX,
+			y=e.offsetY;
+
+		if(flg){
+			ctx.lineTo(x,y)
+			ctx.stroke()
+		}
+	}
+	mycvs.onmouseup=function(){
+		flg=false
+	}
+
+	var colortool=document.querySelectorAll(".colortool span")
+
+	for(var i=0;i<colortool.length;i++){
+
+		colortool[i].onclick=function(){
+			if(ctx.lineWidth>=20){
+				ctx.lineWidth=1
+			}
+			var color=this.style.background
+			ctx.strokeStyle=color
+		}
+	}
+
+	var linetool=document.querySelectorAll(".linetool span")
+
+	for(var i=0;i<linetool.length;i++){
+		linetool[i].onclick=function(){
+
+			if( ctx.lineWidth >= 20 ){
+				ctx.strokeStyle = "#000";
+			}
+ 
+			var txt=this.innerText;
+			ctx.lineWidth=txt;
+		}
+	}
+
+	var clearTool = document.querySelector( ".cleartool" );
+
+	clearTool.onclick = function(){
+		ctx.strokeStyle = "#fff";
+		ctx.lineWidth = 20;
+	}
+	</script>
+</body>
+</html>

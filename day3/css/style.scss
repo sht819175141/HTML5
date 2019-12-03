@@ -1,0 +1,38 @@
+$basc-color:#FA6702;
+#pay-wrap{
+	width:100%;
+		.header-bar{
+		height:44px;
+		width:100%;
+		background:$basc-color;
+		position: relative;
+		.title{
+		position:absolute;
+		left:0;
+		right:0;
+		height:100%;
+		line-height:44px;
+		text-align:center;
+		color:#fff;
+		font-size:14px;
+		top:0;
+		}
+		.icon-group{
+		height:100%;
+		padding:0 10px;
+		display:-webkit-box;
+		-webkit-box-align:center;
+			.icon{
+			width:26px;
+			height:26px;
+			display:block;
+			&.icon-back{
+			background:url(../img/logo.png)
+			}
+		}
+		&.left-icon-group{
+		float:left;
+		}
+		}
+	}
+}

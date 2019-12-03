@@ -1,0 +1,47 @@
+/* line 1, style.scss */
+* {
+  padding: 0;
+  margin: 0; }
+
+/* line 5, style.scss */
+.wrap {
+  width: 100%;
+  position: relative;
+  background: #FFF9E6; }
+  /* line 9, style.scss */
+  .wrap img {
+    width: 100%; }
+    /* line 11, style.scss */
+    .wrap img.txt {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0; }
+    /* line 17, style.scss */
+    .wrap img.cloud {
+      width: 36%; }
+    /* line 20, style.scss */
+    .wrap img.clods {
+      width: 35%; }
+  /* line 25, style.scss */
+  .wrap .main .earth {
+    width: 63%;
+    position: absolute;
+    left: 20%;
+    top: 400%; }
+  /* line 31, style.scss */
+  .wrap .main .star {
+    width: 15%;
+    position: absolute;
+    left: 0%;
+    top: 581%;
+    animation: xuanzhuan 8s linear infinite; }
+@-webkit-keyframes xuanzhuan {
+  0% {
+    transform-origin: 340% 0%;
+    transform: rotate(0deg); }
+  100% {
+    transform-origin: 340% 0%;
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=style.css.map */

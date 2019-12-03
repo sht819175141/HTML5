@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration:none;
+	}
+	.wrap{
+		width: 100%;
+		height: auto;
+		background: #F5F5F5; 
+	}
+	nav{
+		height: 44px;
+		background: #FA6702;
+		display: -webkit-box;
+		-webkit-box-align:center;/*垂直居中*/
+		-webkit-box-pack:justify;/*水平居中*/
+	}
+	nav h3{
+		width: 100px;
+		text-align: center;
+		color:#fff;
+	}
+	nav a{
+		display: inline-block;
+		width: 100px;
+	}
+	section{
+		height: 123px;
+		margin-top: 26px;
+	}
+
+	.process{
+		height:5px;
+		background: url("img/pro.png")
+	}
+	.process p{
+		width: 12.5%;
+		height: 5px;
+		background: #FA6702;
+	}
+	ul{
+		display: -webkit-box;
+		-webkit-box-align:center;
+		-webkit-box-pack:justify;
+	}
+	ul li{
+		width: 25%;
+		height: 40px;
+		float: left;
+		
+	}
+	ul li img{
+		
+		margin-right: 100px;
+	}
+	ol{
+		display: -webkit-box;
+		-webkit-box-align:center;
+		-webkit-box-pack:justify;
+	}
+	ol li{
+		width: 25%;
+		height: 40px;
+		text-align: center;
+
+	}
+	.main{
+		width: 90%;
+		margin: 0 auto;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	.form{
+		width: 100%;
+	}
+	.form form{
+		width: 100%;
+		border:1px solid #ccc;
+		border-radius: 5px;
+		display:-webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	.form form p{
+		width: 100%;
+		border-bottom: 1px solid #ccc;	
+		display:-webkit-box;
+	
+	}
+	.form form p label{
+		display:-webkit-box;
+		-webkit-box-flex:1;
+	}
+	.form form p label span{
+		display:-webkit-box;
+		-webkit-box-flex:1;
+		margin-left: 20px;
+	}
+	.form form p input{
+		display:-webkit-box;
+		-webkit-box-flex:8;
+		border: 0px;
+	}
+	.next button{
+		background: #FA6702;
+		height: 40px;
+		width: 100%;
+		border-radius: 13px;
+		color:#fff;
+	}
+	footer{
+		width: 90%;
+		margin: 0 auto;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;	
+	}
+	footer p{
+		width: 100%;
+		display: -webkit-box;
+		-webkit-box-pack:justify;
+	}
+	footer p span{
+		display: block;
+
+	}
+	footer p span i{
+		font-style: normal;
+		color: #FA6702;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<nav>
+		<a href="#"><img src="img/logo.png"></a>
+			<h3>还款</h3>
+		<a href="#"></a>
+		</nav>
+<main class="main">
+			<section>
+			<div class="process">
+				<p></p>
+			</div>
+		<ul>
+			<a href="./index.html">
+				<li> <img src="img/rone.png" alt=""></li>
+			</a>
+			<a href="./index2.html">
+				<li><img src="img/two.png" alt=""></li>
+			</a>			
+			<a href="./index3.html">
+			<li><img src="img/three.png" alt=""></li>
+			</a>
+			<a href="./index4.html">
+			<li><img src="img/four.png" alt=""></li>
+			</a>
+				
+			</ul>
+			<ol>
+				<li>收款方</li>
+				<li>付款方</li>
+				<li>确认</li>
+				<li>完成</li>
+			</ol>
+		</section>
+		<section class="form" >
+			<form id="form" action="./index2.html">
+				<p><label for=""><img src="img/five.png" alt=""><span>收款方卡号:</span></label><input type="text" placeholder="请输入15-20位银行卡号" id="number" required="内容不能为空" pattern="[0-9]{15,20}" name="one" tiptext="格式错误"></p>
+				<p><label for=""><img src="img/five.png" alt=""><span>收款方姓名:</span></label><input type="text" required pattern="[\u4e00-\u9fa5]+" name="two" tiptext="格式错误"></p>
+				<p><label for=""><img src="img/five.png" alt="" placeholder="大于等于3元小于等于500元"><span>金额:</span></label><input type="text" required name="three" pattern="^[3-9]$|^[1-9]\d$|^[1-4]\d{2}$|^[5]0{2}$" tiptext="格式错误"></p>	
+			</form>
+		</section>
+		<section class="next">
+			<button id="next" form="form" type="submit">下一步</button>
+		</section>
+</main>
+
+		<footer>
+			<p><span>您的当前转账额度</span><span><a href="">如何提升额度?</a></span></p>
+			<p><span>单笔:	<i>500元</i>	</span><span>单日累计:	<i>500元</i></span></p>
+			
+		</footer>
+	</div>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/cj.js"></script>
+	<script>
+	$(function(){
+		$("#form").FormValue({
+			one:{
+				pattern:"[0-9]{5,10}",
+				cont:"格式错误"
+			},
+			two:{
+				pattern:"[\u4e00-\u9fa5]+",
+				cont:"格式错误"
+			},
+			three:{
+				pattern:"^[3-9]$|^[1-9]\d$|^[1-4]\d{2}$|^[5]0{2}$",
+				cont:"格式错误"
+			}
+		})
+	})
+	</script>
+</body>
+</html>

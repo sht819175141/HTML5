@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<header class="head">
+			<div class="left_poin">
+				<img src="img/a93.png" class="pic"/>
+			</div>
+			<h2 class="tip">还款</h2>
+		</header>
+		<div class="main">
+			<div class="nav-content">
+				<a href="javascript:;">
+					<div class="line">
+						<span class="bg"></span>
+						<span class="bg"></span>
+					</div>
+					<dl>
+						<dt><img src="img/a98.png" alt="" /></dt>
+						<dd>收款方</dd>
+					</dl>
+				</a>
+				<a href="javascript:;">
+					<div class="line">
+						<span></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a97.png" alt="" /></dt>
+						<dd>付款方</dd>
+					</dl>
+				</a>
+				<a href="javascript:;">
+					<div class="line">
+						<span></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a96.png" alt="" /></dt>
+						<dd>确认</dd>
+					</dl>
+				</a>
+				<a href="javascript:;">
+					<div class="line">
+						<span></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a95.png" alt="" /></dt>
+						<dd>完成</dd>
+					</dl>
+				</a>
+			</div>
+			<div class="form_content">
+				<form id="myform">
+					<p>
+						<label>收款方卡号:</label><input type="text" name="scard" placeholder="请输入15-20位银行卡" required="卡号不能为空"/>
+					</p>
+					<p>
+						<label>收款方姓名:</label><input type="text" name="user" required="姓名不能为空"/>
+					</p>
+					<p>
+						<label>金额:</label><input type="number" placeholder="大于等于3元小于等于500元" required="金额不能为空" name="num"/>
+					</p>
+				</form>
+				<input type="submit" name="submit" value="下一步" class="submit" form="#myform"/>
+			</div>
+			<footer class="footer">
+				<p><b>您的当前转帐额度</b><a href="#">如何提升额度？</a></p>
+				<p>
+					<label class="left">单笔:<output>500元</output></label>
+					<label class="right">单日累计:<output>500元</output></label>
+				</p>
+			</footer>
+		</div>	
+	</div>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+	var checkValdata = function( id ){
+		// 获取文档中 id=" id " 的第一个元素：
+		this.form = document.querySelector( id );
+		//按文档顺序返回指定元素节点的子树中匹配选择器的元素集合，如果没有匹配返回空集合[nodeList]
+		this.formCheckList = this.form.querySelectorAll( "input" );
+		//console.log(this.formCheckList)
+		this.patternList = {
+			scard : {
+				tipText : "请输入正确卡号",
+				pattern :"^(\d{16}|\d{19})$"
+			},
+			user : {
+				tipText : "请输入正确的收款方姓名",
+				pattern : "^[a-zA-z][a-zA-Z0-9_]{2,9}$"
+			},
+			num  : {
+				tipText : "请输入正确的金额",
+				pattern : "^[\d]$"	
+			}
+		}
+		this.init();
+	};
+
+	checkValdata.prototype = {
+		init : function(){
+			//判断是否需要已默认属性来验证，判断过后，格式
+			this.setForm();
+			
+			this.setPattern();
+		},
+		setForm : function(){
+			var that = this;
+			//novalidate  用于form取消表单验证
+            //首先取消默认验证，由我们去手动验证
+			this.form.setAttribute( "novalidate",true );
+			this.form.onsubmit = function(){
+				//返回布尔值，true/false
+				return that.checkAll();
+			}
+		},
+
+		checkAll : function(){
+			//所有查询到的符合要求的节点的集合[nodelist]
+			var formCheckList = this.formCheckList;
+			var checkFlg = true;
+			for( var i=0; i<formCheckList.length; i++ ){
+				//遍历所有节点，将所有节点放入check函数，去判断，是否具有requred和pattern属性，得到 {
+                        //type=1/2,
+                        //check=true/false;
+                     //}
+				var checkJSON = this.check( formCheckList[i] )
+				//判断json数据中的check是true还是false;
+
+                //如果json数据中的check是false;
+				if( !checkJSON.check ){
+					//传参，调用checkTip函数，当前输入框的值，以及json中的type值，
+					this.checkTip( formCheckList[i],checkJSON.type )
+					checkFlg = false;
+				}else{
+					formCheckList[i].innerText = "";
+				}
+			}
+			return checkFlg;
+		},
+
+		/*首先，我们判断是否存在【required】和【pattern】属性，有没有这两个属性，是两个结果；
+        如果，有required属性的话，
+                    如果值为空，则type=1;check=false;
+                    如果有值的话，则按照【item.checkValidity()】格式来判断判断，type=2;
+
+        如果，没有required属性的话，如果值为空，则type=1;check=true;
+                如果没有值的话，还需要判断是否具有pattern属性
+                    如果没有pattern属性，则type=1;check=true;
+                如果有值的话，则按照【item.checkValidity()】格式来判断判断  
+    	*/
+		check : function( item ){
+			/**
+			 * 1, 非空验证
+			 * 2，非空验证通过后，格式验证
+			 * 3, 如果可以为空，但是需要输入格式的验证
+			 */
+			var pattern = item.getAttribute("pattern"),
+				required = item.getAttribute( "required");
+                
+			if( required != null ){  //必填项
+				 //value是否有值
+				if( item.value == "" ){ 
+					return {
+						type : 1,
+						check : false
+					}
+				}else{
+					return {
+						type : 2,
+						check : item.checkValidity()
+					}
+				}
+			}else{
+				if( item.value == "" ){
+					return {
+						type : 1,
+						check : true
+					}
+				}else{
+					if( pattern == null ){
+    					return {
+    						type : 1,
+    						check : true
+    					}
+    				}else{
+    					return {
+    						type : 2,
+    						check : item.checkValidity()
+    					}
+    				}
+				}
+			}
+		},
+
+		setPattern : function(){
+			var formCheckList = this.formCheckList;
+			//遍历所有节点，所有查询到的符合要求的节点的集合[nodelist]
+			for( var i=0; i<formCheckList.length; i++ ){
+				//获取到，当前输入框，所获取到的type值，
+				var type = formCheckList[i].type;
+				if ( !formCheckList[i].getAttribute( "pattern" ) ){
+                //将type作为下标，
+					if( this.patternList[type] ){
+						formCheckList[i].setAttribute( "pattern",this.patternList[type].pattern )
+						formCheckList[i].setAttribute( "tipText",this.patternList[type].tipText )
+					}
+				}
+			}
+		},
+		
+		//传参，调用checkTip函数，当前输入框的值，以及json中的type值，
+		checkTip : function( item,type ){
+			//如果type==1
+			if( type == 1 ){
+				//弹出当前输入框获取到的required属性
+				item.innerText = item.getAttribute("required");
+			}else{
+				//否则，弹出当前输入框获取到的pattern属性
+				item.innerText = item.getAttribute("tipText");
+			}
+		}
+	}
+	new checkValdata( "#wrap" );
+	$(".submit").on("click",function(){
+		alert("1")
+	})
+	</script>
+</body>
+</html>

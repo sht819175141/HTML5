@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<canvas id ="myCanvas" width = "240" height = "160" style = "background:red"></canvas>
+	<script>
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	
+	ctx.fillStyle = "yellow";
+	ctx.strokeStyle = "#0f0";
+	ctx.lineWidth = "3";
+	
+
+	ctx.__proto__.createStat = function(x,y,r) {
+		var rArray = [270,306,342,18,54,90,126,162,198,234,270];
+		var r =r,
+			rx = x;
+			ry = y;
+		this.beginPath();
+		for(var i=0;i<rArray.length;i++){
+			cos = Math.cos(2*Math.PI/360*rArray[i]);
+			sin = Math.sin(2*Math.PI/360*rArray[i]);
+			if(i%2==0){
+				var x = rx+cos*r;
+				var y = ry+sin*r;
+				this.lineTo(x,y)
+			}else{
+				var x = rx+cos*(r*0.4);
+				var y = ry+sin*(r*0.4);
+				this.lineTo(x,y)
+			}
+			
+			/*console.log(x+","+y)*/
+		}
+
+		this.fill();
+
+	};
+	ctx.__proto__.createStats = function(x,y,r) {
+		var rArray = [270,306,342,18,54,90,126,162,198,234,270];
+		var r =r,
+			rx = x;
+			ry = y;
+		this.beginPath();
+		for(var i=0;i<rArray.length;i++){
+			cos = Math.cos(2*Math.PI/360*rArray[i]);
+			sin = Math.sin(2*Math.PI/360*rArray[i]);
+			if(i%2==0){
+				var x = rx+sin*r;
+				var y = ry+cos*r;
+				this.lineTo(x,y)
+			}else{
+				var x = rx+sin*(r*0.4);
+				var y = ry+cos*(r*0.4);
+				this.lineTo(x,y)
+			}
+			
+			/*console.log(x+","+y)*/
+			
+			
+		}
+
+		this.fill();
+
+	};
+
+	ctx.createStat(40,40,24);
+	ctx.createStats(80,16,8);
+	ctx.createStats(96,32,8);
+	ctx.createStat(96,56,8);
+	ctx.createStats(80,72,8);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration:none;
+	}
+	.wrap{
+		width: 100%;
+		height: auto;
+		background: #F5F5F5; 
+	}
+	nav{
+		height: 44px;
+		background: #FA6702;
+		display: -webkit-box;
+		-webkit-box-align:center;/*垂直居中*/
+		-webkit-box-pack:justify;/*水平居中*/
+	}
+	nav h3{
+		width: 100px;
+		text-align: center;
+		color:#fff;
+	}
+	nav a{
+		display: inline-block;
+		width: 100px;
+	}
+	section{
+		height: 123px;
+		margin-top: 26px;
+	}
+
+	.process{
+		height:5px;
+		background: url("img/pro.png")
+	}
+	.process p{
+		width: 100%;
+		height: 5px;
+		background: #FA6702;
+	}
+	ul{
+		display: -webkit-box;
+		-webkit-box-align:center;
+		-webkit-box-pack:justify;
+	}
+	ul li{
+		width: 25%;
+		height: 40px;
+		text-align: center;
+		float: left;
+	}
+	ul li img{
+		
+		margin-right: 100px;
+	}
+	ol{
+		margin-top: 20px;
+	}
+	ol li{
+		text-align: center;
+		line-height: 24px;
+	}
+	.main{
+		width: 90%;
+		margin: 0 auto;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	.form{
+		width: 100%;
+	}
+	.form a{
+		text-align: center;
+		display: block;
+	}
+
+	.next button{
+		background: #FA6702;
+		height: 40px;
+		width: 100%;
+		border-radius: 13px;
+		color:#fff;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<nav>
+		<a href="#"><img src="img/logo.png"></a>
+			<h3>还款</h3>
+		<a href="#"></a>
+		</nav>
+<main class="main">
+			<section>
+			<div class="process">
+				<p></p>
+			</div>
+			<ul>
+			<a href="./index.html">
+				<li> <img src="img/one.png" alt=""></li>
+			</a>
+			<a href="./index2.html">
+				<li><img src="img/two.png" alt=""></li>
+			</a>			
+			<a href="./index3.html">
+			<li><img src="img/three.png" alt=""></li>
+			</a>
+			<a href="./index4.html">
+			<li><img src="img/rfour.png" alt=""></li>
+			</a>
+				
+			</ul>
+			<ul>
+				<li>收款方</li>
+				<li>付款方</li>
+				<li>确认</li>
+				<li>完成</li>
+			</ul>
+		</section>
+		<section class="form">
+			<a href="#">成功转账500元</a>
+			<ol>
+				<li>实时到账</li>
+				<li>流水号:163781</li>
+				<li>时间:02/06 13:59</li>
+			</ol>
+		</section>
+		<section class="next">
+			<button>完成</button>
+		</section>
+</main>
+
+	</div>
+</body>
+</html>

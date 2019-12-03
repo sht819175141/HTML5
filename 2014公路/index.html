@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="animate.min.css" />
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.index-page{
+			width: 100%;
+			height: 100%;
+			background: #cfe9fb;
+			overflow: hidden;
+		}
+		.index-page .title{
+			width: 60%;
+			margin: 20px auto;
+		}
+		.index-page .title img{
+			width: 100%;
+			display: block;
+		}
+		.index-page .slide-btn{
+			text-align: center;
+			display: block;
+			width: 100%;
+		}
+		.index-page .slide-btn a{
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			background: #61a5d4;
+			border: 2px solid #cfe9fb
+		}
+		.index-page .slide-btn a.on{
+			
+			background: #fff;
+			border: 2px solid #61a5d4
+		}
+		.index-page .cloud{
+			width: 100%;
+			height: 128px;
+			background: url( cloud.png ) no-repeat;
+			background-size: auto 128px;
+			-webkit-animation: cloud 10s linear infinite;
+		}
+
+		@-webkit-keyframes cloud{
+			0%{
+				background-position: 0 0;
+			}
+			100%{
+				background-position: 100% 0;
+			}
+		}
+		.event-box{
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			overflow: hidden;
+		}
+		.event-box img{
+			
+			display: block;
+			width: 100%;
+		}
+		.event-content{
+			position: relative;
+			width: 200%;
+			display: block;
+			position: absolute;
+			margin-left: -50%;
+			margin-bottom: -100%;
+			bottom: -10%;
+		}
+		.event-box nav a{
+			display: block;
+			position: absolute;
+			width:10%;
+			height: 10%;
+			background: rgba(255,255,255,0.2);
+			top: 0;
+			left: 0;
+			border-radius: 100%;
+			border: 5px solid rgba(255,255,255,0.6);
+		}
+		.event-slide{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.event-slide > div,.slideContent{
+			width: 100%;
+			height: 100%;
+		}
+		.event-slide > div .page{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="index-page">
+		<h2 class="title"><img src="2014_logo.png"/></h2>
+		<nav class="slide-btn">
+			<a href="javascript:;" class="on"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+		</nav>
+		<div class="cloud"></div>
+		<div class="event-box">
+			<div class="event-content">
+				<img src="1-2-3-9-10.jpg" class="eventBg" />
+				<nav>
+					<a href="#"  class="btn1" style="left:38%;top:2%;"></a>
+					<a href="#"  class="btn2" style="left:84%;top:25%;"></a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<style type="text/css">
+		.event-wrap1{
+			background: #e94d4e;
+		}
+		.event-wrap1 .page *{
+			display: none;
+		}
+		.event-wrap1 .page.on *{
+			display: block;
+		}
+		.event-wrap1 .page.on p span{
+			display: inline-block;
+		}
+		.event-wrap1 .page1{
+			padding: 40px;
+			box-sizing:border-box;
+			background: #e94d4e;
+		}
+		.event-wrap1 .page1 h2{
+			font-size: 24px;
+			color: #fff;
+		}
+		.event-wrap1 .page1 p{
+			font-size: 12px;
+			color: #fff;
+			line-height: 2;
+		}
+		.event-wrap1 .page1 .ff_tips_h3{
+			font-size: 12px;
+			color: #fff;
+			line-height: 2;
+		}
+		.ff_peoplecont{
+			text-align: center;
+			margin: 10px 0;
+		}
+		.event-wrap1 .page1 .ff_tips_h3 strong{
+			font-size: 24px;
+			color: #0f0;
+			line-height: 2;
+		}
+	</style>
+	<div class="event-slide">
+		<div class="event-wrap1">
+			<div class="slideContent">
+				<section class="page page1">
+					<h2 class="sh_h2 animated fadeInLeft"  style="-webkit-animation-delay:0s;">这一路上</h2>
+					<p class="sh_h2_tips  animated fadeInLeft" style="-webkit-animation-delay:.5s;">我见证了一场艰苦卓绝的打老虎战役</p>
+					<div class="ff_peoplecont  animated fadeIn" style="-webkit-animation-delay:1s;">
+						<p>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+						</p>
+						<p>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+						</p>
+						<p>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+						</p>
+						<p>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+							<span><img src="people.png" alt="" width="14"></span>
+						</p>
+					</div>
+					<h3 class="ff_tips_h3  animated fadeInUp"  style="-webkit-animation-delay:1.5s;">
+						今年以来<br>
+						至少已有 <strong>38</strong> 名省部级以上官员落马
+					</h3>
+				</section>
+				<section class="page page2">
+						<p class="ff_tips_center ff1 animated fadeInLeft">其中，副国级以上有 <strong>3</strong> 人</p>
+						<p class="ff_tips_center ff2 animated fadeInLeft">徐才厚家中发现的现金有 <strong>1吨</strong> 重</p>
+
+				</section>
+				<section class="page page3">
+					
+					asdasda
+				</section>
+			</div>
+		</div>
+		<div class="event-wrap2">
+			<div class="slideContent">
+				<section class="page"></section>
+				<section class="page"></section>
+				<section class="page"></section>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="zepto.min.js"></script>
+	<script type="text/javascript">
+		var showIndex = 0;
+		//首页图片滚动效果
+		$( ".event-box" ).swipeLeft(function(){
+			var index = $( ".slide-btn .on" ).index()+1;
+			index = index >=  $( ".slide-btn a" ).length ? 0  : index;
+			showIndex++
+			gongluRotate( index )
+		})
+		$( ".event-box" ).swipeRight(function(){
+			var index = $( ".slide-btn .on" ).index()-1;
+			index = index < 0 ? $( ".slide-btn a" ).length - 1 : index;
+			showIndex--;
+			gongluRotate( index )
+		})
+
+
+		function gongluRotate( index ){
+
+			var deg = -showIndex*36;
+			$( ".event-content" ).animate({
+				rotate : deg+"deg"
+			},1000,"ease",function(){
+				$( ".slide-btn a" ).eq(index).addClass("on").siblings().removeClass("on");
+			})
+		}
+
+		//
+		$( ".event-content nav a" ).tap(function(){
+			var index =$(this).index();
+			$( ".event-slide" ).show();
+			$( ".event-slide > div" ).eq( index ).show().siblings().hide();
+			$( ".event-slide > div" ).eq( index ).find(".page1").addClass("on").siblings().removeClass("on")
+		})
+
+
+		$( ".event-slide > div" ).on("swipeUp",function(){
+			var index =$( this ).find(".page.on").index();
+			index++;
+			if( index >= $( this ).find(".page").length ){
+				$( ".event-slide").animate({
+					translateY : "-100%"
+				},500,"ease",function(){
+					$(this).attr("style","").find(".slideContent").attr("style","");
+					$(this).hide();
+				})
+
+				return false;
+			}
+			$( this ).find(".slideContent").animate({
+				translateY : -index*100+"%"
+			},500,"ease",function(){
+				$(this).find(".page").eq(index).addClass("on").siblings().removeClass("on")
+			})
+		})
+		$( ".event-slide > div" ).on("swipeDown",function(){
+			var index =$( this ).find(".page.on").index();
+			index--;
+			$( this ).find(".slideContent").animate({
+				translateY : -index*100+"%"
+			},500,"ease",function(){
+				$(this).find(".page").eq(index).addClass("on").siblings().removeClass("on")
+			})
+		})
+	</script>
+	<div class=""></div>
+</body>
+</html>

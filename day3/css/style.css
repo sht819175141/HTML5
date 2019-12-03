@@ -1,0 +1,32 @@
+#pay-wrap {
+  width: 100%; }
+  #pay-wrap .header-bar {
+    height: 44px;
+    width: 100%;
+    background: #FA6702;
+    position: relative; }
+    #pay-wrap .header-bar .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 100%;
+      line-height: 44px;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      top: 0; }
+    #pay-wrap .header-bar .icon-group {
+      height: 100%;
+      padding: 0 10px;
+      display: -webkit-box;
+      -webkit-box-align: center; }
+      #pay-wrap .header-bar .icon-group .icon {
+        width: 26px;
+        height: 26px;
+        display: block; }
+        #pay-wrap .header-bar .icon-group .icon.icon-back {
+          background: url(../img/logo.png); }
+      #pay-wrap .header-bar .icon-group.left-icon-group {
+        float: left; }
+
+/*# sourceMappingURL=style.css.map */

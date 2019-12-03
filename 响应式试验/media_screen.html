@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<style>
+		/*
+			苹果5
+			苹果6
+			6plus
+			ipad
+		*/
+		body,html{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			width: 960px;
+			margin: 0 auto;
+		}
+		#wrapper{
+			width: 740px;
+			float: left;
+		}
+		p{
+			line-height: 600px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 2em;
+			margin: 0 0 20px 0;
+		}
+		#main{
+			width: 520px;
+			float: right;
+			background: yellow;
+		}
+		#sub01{
+			width: 200px;
+			float: left;
+			background: orange;
+		}
+		#sub02{
+			width: 200px;
+			float: right;
+			background: green;
+		}
+		/**
+		 * 窗口宽度在1000以上
+		 */
+		@media screen  and (min-width: 1000px ) {
+			#container{
+				width: 1000px;
+			}
+			#wrapper{
+				width: 780px;
+				float: left;
+			}
+			#main{
+				width: 560px;
+				float:right;
+			}
+			#sub01{
+				width: 200px;
+				float: left;
+			}
+			#sub02{
+				width: 200px;
+				float: right;
+			}
+		}
+		/**
+		 * 窗口宽度大于640并且小于999px
+		 */
+		
+		@media screen and ( min-width:640px ) and ( max-width:999px ){
+			#container{
+				width: 640px;
+			}
+			#wrapper{
+				width: 640px;
+				float: none;
+			}
+			p{
+				line-height: 400px;
+			}
+			#main{
+				width: 420px;
+				float:right;
+			}
+			#sub01{
+				width: 200px;
+				float: left;
+			}
+			#sub02{
+				width: 100%;
+				float: none;
+				line-height: 150px;
+				clear: both;
+			}
+		}
+		/**
+		 * 窗口宽度在639以下
+		 */
+
+		@media screen and ( max-width:639px ){
+			#container{
+				width: 100%;
+			}
+			#wrapper{
+				width: 100%;
+				float: none;
+			}
+			p{
+				line-height: 150px;
+			}
+			#main{
+				width: 100%;
+				float:none;
+			}
+			#sub01{
+				width: 100%;
+				float: none;
+			}
+			#sub02{
+				width: 100%;
+				float: none;
+				line-height: 150px;
+				clear: both;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="wrapper">
+			<p id="main">main</p>
+			<p id="sub01">sub01</p>
+		</div>
+		<p id="sub02">sub02</p>
+	</div>
+</body>
+</html>

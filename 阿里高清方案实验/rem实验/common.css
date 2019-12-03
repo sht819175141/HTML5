@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column; 
+}
+
+.wrap {
+  font-size: .28rem;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   display: -webkit-flex;
+   -webkit-flex-direction: column;
+}
+
+.line_right {
+  border-right: 1px solid #ccc; }
+
+.top_line {
+  border-top: 1px solid #ccc; }
+
+option {
+  min-height: 0.01rem !important; }
+
+header {
+  width: 100%;
+  text-align: center;
+  background: #2490FF;
+  color: #fff;
+  height: 0.8rem;
+  position: fixed;
+  left: 0;
+  top: 0; }
+  header .left {
+    position: absolute;
+    left: 50px; }
+  header a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.28rem;
+    line-height: 0.8rem; }
+  header span {
+    line-height: 0.8rem;
+    font-size: 0.32rem;
+    display: block; }
+
+.size_14 {
+  font-size: 0.14rem; }
+
+.ali_header * {
+  padding: 0;
+  margin: 0; }
+.ali_header html, .ali_header body {
+  width: 100%; }
+.ali_header .page {
+  width: 100%;
+  padding-top: 0.4rem; }
+.ali_header header {
+  width: 100%;
+  text-align: center;
+  background: #2490FF;
+  color: #fff;
+  height: 0.4rem;
+  position: fixed;
+  left: 0;
+  top: 0; }
+.ali_header header .iconfont {
+  font-size: 15px; }
+.ali_header header .left {
+  position: absolute;
+  left: 0.25rem; }
+.ali_header header a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.14rem;
+  line-height: 0.4rem; }
+.ali_header header span {
+  line-height: 0.4rem;
+  display: block;
+  font-size: 0.16rem; }
+
+/*# sourceMappingURL=common.css.map */

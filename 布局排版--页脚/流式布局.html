@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .wrap .header {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #0ff;
+            text-align: center;
+        }
+
+        .wrap .main-left {
+            width: 200px;
+            height: 500px;
+            border: 1px solid #000000;
+            text-align: center;
+            float: left;
+        }
+
+        .wrap .main-right {
+            width: auto;
+            height: 500px;
+            border: 1px solid #0f0;
+            text-align: center;
+            margin-left: 200px;
+        }
+
+        .main-right .item-left {
+            width: 100px;
+            float: left;
+            height: 500px;
+            border: 1px solid #0a8cd2;
+        }
+
+        .main-right .item-right {
+            width: auto;
+            height: 500px;
+            border: 1px solid #0a8cd2;
+            margin-left: 100px;
+        }
+
+        /*.wrap .main-right {*/
+        /*    background: red;*/
+        /*    position: absolute;*/
+        /*    top: 80px;*/
+        /*    left: 300px;*/
+        /*    right: 0px;*/
+        /*    bottom: 80px;*/
+        /*}*/
+
+        .wrap .footer {
+            width: 100%;
+            height: 80px;
+            background: #FFFFFF;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">头部</div>
+    <div class="main-left">左侧目录</div>
+    <div class="main-right">
+        <div class="item-left">内左</div>
+        <div class="item-right">内右</div>
+    </div>
+    <div class="footer">尾部</div>
+</div>
+</body>
+</html>

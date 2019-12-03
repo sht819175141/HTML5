@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form id="myform" oninput="this.rangeVal.innerText = this.range.value">
+		<input type="text" name="name" list="w3cmm" autocomplete="off" 
+		pattern="[0-9][A-Z]{3}"  required >
+		<datalist id="w3cmm">
+	  		<option>HTML</option>
+	  		<option>CSS</option>
+	  		<option>JavaScript</option>
+		</datalist>
+
+		<input type="tel" name="tel" autofocus>
+		<input type="number" name="email">
+		<input type="color" name="email">
+		<input type="date" name="email">
+		<input type="range" name="range" min="0" step="10" max="1000" >
+		<output name="rangeVal"></output>
+		<button type="submit" formaction="#cc">提交</button>
+		<button type="submit" formaction="#bb" formmethod="post">提交</button>
+	</form>
+	<input type="url" name="url" form="myform">
+	
+</body>
+</html>

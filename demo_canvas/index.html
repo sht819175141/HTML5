@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画图</title>
+	<style>
+	#myinfo{
+		width: 600px;
+		height: 600px;
+		background: #fff;
+		margin: 0 auto;
+	}
+	h1{
+		text-align: center;
+	}
+	#mycvs{
+		border: 10px solid #000;
+	}
+	.tool{
+		height:50px;
+	}
+	.colortool{
+		overflow: hidden;
+		float: left;
+		margin-top: 10px;
+	}
+	.colortool span{
+		float: left;
+		width: 20px;
+		height: 30px;
+	}
+	.cleartool{
+		cursor: pointer;
+		float: left;
+		margin-left: 100px;
+		margin-right: 80px;
+	}
+	.linetool{
+		float: left;
+		margin-right: 50px;
+	}
+	.linetool span{
+		float: left;
+		background: #000;
+		text-align: center;
+		margin-right: 10px;
+	}
+	.linetool .one{
+		float: left;
+		width: 10px;
+		height: 10px;
+		border-radius: 5px 5px;
+		line-height: 10px;	
+	}
+	.linetool .two{
+		float: left;
+		width: 14px;
+		height: 14px;
+		border-radius: 7px 7px;
+		line-height: 14px;	
+	}
+	.linetool .three{
+		float: left;
+		width: 18px;
+		height: 18px;
+		border-radius: 9px 9px;
+		line-height: 18px;	
+	}
+	.close{
+		float: right;
+		height:25px;
+		width:25px;
+		line-height: 25px;
+		text-align: center;
+		font-size: 40px;
+		background: #ccc;
+		margin-top: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div id="myinfo">
+		<canvas width="600" height="400" id="mycvs"></canvas>
+		<div class="tool">
+			<div class="cleartool" style="margin-top:20px">橡皮</div>
+			<div class="linetool" style="margin-top:20px">
+				<span class="one">2</span>
+				<span class="two">4</span>
+				<span class="three">6</span>
+			</div>
+			<div class="colortool">
+				<span style="background:#ccc"></span>
+				<span style="background:#333"></span>
+				<span style="background:#666"></span>
+				<span style="background:#999"></span>
+				<span style="background:#000"></span>
+				<span style="background:#fff"></span>
+				<span style="background:#0f0"></span>
+				<span style="background:#f00"></span>
+				<span style="background:#00f"></span>
+				<span style="background:#0ff"></span>
+				<span style="background:#ff0"></span>
+			</div>
+			<div class="close">x</div>
+		</div>
+	</div>
+	<script>
+	var mycvs=document.getElementById('mycvs')
+	var ctx=mycvs.getContext("2d")
+	var flg=false;
+
+	ctx.lineJoin = "round";
+	ctx.lineCap = "round";
+	ctx.lineWidth=1;
+
+	mycvs.onmousedown=function(e){
+		var x=e.offsetX,
+		y=e.offsetY;
+		flg=true;
+		ctx.beginPath()
+		ctx.moveTo(x,y)
+	}
+	mycvs.onmousemove=function(e){
+		var x=e.offsetX,
+			y=e.offsetY;
+
+		if(flg){
+			ctx.lineTo(x,y)
+			ctx.stroke()
+		}
+	}
+	mycvs.onmouseup=function(){
+		flg=false
+	}
+
+	var colortool=document.querySelectorAll(".colortool span")
+
+	for(var i=0;i<colortool.length;i++){
+
+		colortool[i].onclick=function(){
+			if(ctx.lineWidth>=20){
+				ctx.lineWidth=1
+			}
+			var color=this.style.background
+			ctx.strokeStyle=color
+		}
+	}
+
+	var linetool=document.querySelectorAll(".linetool span")
+
+	for(var i=0;i<linetool.length;i++){
+		linetool[i].onclick=function(){
+
+			if( ctx.lineWidth >= 20 ){
+				ctx.strokeStyle = "#000";
+			}
+ 
+			var txt=this.innerText;
+			ctx.lineWidth=txt;
+		}
+	}
+
+	var clearTool = document.querySelector( ".cleartool" );
+
+	clearTool.onclick = function(){
+		ctx.strokeStyle = "#fff";
+		ctx.lineWidth = 20;
+	}
+	</script>
+</body>
+</html>

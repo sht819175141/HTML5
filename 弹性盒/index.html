@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 100%;
+			height: 400px;
+			display: -webkit-box;  /**规定弹性盒布局**/
+			-webkit-box-orient:horizontal;
+			-webkit-box-pack:justify;
+			-webkit-box-align:center;
+			-webkit-box-direction:reverse;
+			background: #000;
+		}
+		.box > div{
+			width: 20px;
+			height: 100px;
+		}
+		dl{
+			width: 100%;
+			display: -webkit-box;
+			height: 80px;
+			background: #f00;
+		}
+		dl h1{
+			line-height: 1;
+			font-size: 14px;
+
+		}
+		dl h1 time{
+			float: right;
+		}
+		dl p{
+			font-size: 12px;
+		}
+		dl dd{
+			-webkit-box-flex:1;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		
+		<div class="box-child" style="background: #f00;"></div>
+		<div class="box-child" style="background: #0f0;"></div>
+		<div class="box-child" style="background: #0f0;"></div>
+		<div class="box-child" style="background: #0f0;"></div>
+		<div class="box-child" style="background: #0f0;"></div>
+		<div class="box-child" style="background: #00f;"></div>
+	</div>
+
+	<dl>
+		<dt><img src="" width="80" height="80"></dt>
+		<dd>
+			<h1>标题 <time>3天前</time></h1>
+			<p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+		</dd>
+	</dl>
+
+	<style type="text/css">
+
+		.flex-box{
+			width: 800px;
+			display: -webkit-box;
+			background: #000;
+		}
+		.flex-box div{
+			-webkit-box-flex:1;
+		}
+	</style>
+
+	<div class="flex-box">
+		<div style="width: 100px; background: #f00;height: 100px;-webkit-box-flex-group:1;-webkit-box-flex:1;-webkit-box-ordinal-group:2;">213123</div>
+		<div style="width: 100px; background: #0f0;height: 100px;-webkit-box-flex-group:2;-webkit-box-flex:3;-webkit-box-ordinal-group:1;">1222</div>
+		<div style="width: 100px; background: #00f;height: 100px;-webkit-box-flex-group:3;-webkit-box-flex:2;-webkit-box-ordinal-group:3;">45555555555555555</div>
+	</div>
+</body>
+</html>

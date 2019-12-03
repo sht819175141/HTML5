@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.txt {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			width: 300px;
+		}
+		.clum {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+			width: 300px;
+
+		}
+	</style>
+</head>
+
+<body>
+	<!--单行变省略号-->
+	<p class="txt">溢出文字隐藏溢出文字隐藏溢出文字隐藏溢出文字隐藏隐藏溢出文字隐藏溢出文字隐藏溢出文字隐藏隐藏溢出文字隐藏溢出文字隐藏溢出文字隐藏</p>
+	<!--多行变省略号-->
+	<div class="clum">溢出文字隐藏溢出文字隐藏溢出文字隐藏溢出文字隐藏隐藏溢出文字隐藏溢出文字隐藏溢出文字隐藏隐藏溢出文字隐藏溢出文字隐藏溢出文字隐藏</div>
+</body>
+
+</html>

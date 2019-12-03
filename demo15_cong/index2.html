@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			width:100%;
+			height:100%;
+		}
+		body{
+			position:relative;
+			background:url(images/P4-BG01.png);
+			background-size:cover;
+		}
+		.wen{
+			width:100%;
+			margin:15% auto;
+		}
+		.wen .m1{
+			width:70%;
+			display:block;
+			margin:10px auto;
+		}
+		.wen .m2{
+			width:50%;
+			display:block;
+			margin:10px auto;
+		}
+		.main{
+			position:absolute;
+			width:100%;
+			height:100%;
+			right:3%;
+			 top:0.5%;
+		}
+		.main .d1{
+			position:absolute;
+			width: 3%;
+		    left: 83%;
+		    top: -5.5%;
+		    transform: rotate(0deg);
+    		transform-origin: right bottom;
+    		animation: zhuan 1s linear;
+		}
+		@-webkit-keyframes zhuan{
+			0%{
+				transform: rotate(90deg);
+				transform-origin: right bottom; 
+			}
+			100%{
+				transform: rotate(0deg);
+				transform-origin: right bottom;
+			}
+		}
+
+		.main .d2{
+			position:absolute;
+			width: 12%;
+		    left: 83%;
+		    top: -6%;
+		}
+		.main .d3{
+			position:absolute;
+			width: 4%;
+		    left: 75%;
+		    top: -7%;
+		    animation:fei 4s linear 0.7s;
+		    opacity: 0;
+		}
+		@-webkit-keyframes fei{
+			0%{
+				opacity: 1;
+				position:absolute;
+				width: 4%;
+			    left: 78%;
+			    top: -7%
+			}
+			10%{
+				position:absolute;
+				width: 4%;
+			    left: 70%;
+			    top: -8%
+			}
+			20%{
+				position:absolute;
+				width: 4%;
+			    left: 60%;
+			    top: -8.5%
+			}
+			30%{
+				position:absolute;
+				width: 4%;
+			    left: 50%;
+			    top: -8%
+			}
+			40%{
+				position:absolute;
+				width: 4%;
+			    left: 40%;
+			    top: -7.5%
+
+			}
+			50%{
+				position:absolute;
+				width: 4%;
+			    left: 30%;
+			    top: -7%
+			}
+			60%{
+				position:absolute;
+				width: 4%;
+			    left: 20%;
+			    top: -7.5%
+			}
+			80%{
+				position:absolute;
+				width: 4%;
+			    left: 0%;
+			    top: -8%
+			}
+			90%{
+				position:absolute;
+				width: 4%;
+			    left: 0%;
+			    top: -8.5%
+			}
+			100%{
+				position:absolute;
+				width: 4%;
+			    left: 0%;
+			    top: -9%
+			}
+		}
+	</style>
+
+</head>
+<body>
+<div class="wen">
+	<img src="images/P4-WZ01－new.png" alt="" class="m1">
+	<img src="images/P4-WZ02-new.png" alt="" class="m2">
+</div>
+<div class="main">
+	<img src="images/P4-Child02.png" alt="" class="d1">
+	<img src="images/P4-Child01.png" alt="" class="d2">
+	<img src="images/P4-Child03.png" alt="" class="d3">
+</div>
+</body>
+</html>

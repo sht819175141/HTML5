@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="./css/demo.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/font-awesome.css"/>
+</head>
+<body>
+   <div class="container">
+       <div class="imag">
+           <img src="./img/img6.jpg">
+           <img src="./img/img7.jpg">
+           <img src="./img/img8.jpg">
+           <img src="./img/img9.jpg">
+           <img src="./img/img10.jpg">
+       </div>
+       <header>
+           <ul>
+               <li>宝箱</li>
+               <li class="btn">换肤</li>
+               <li>消息</li>
+           </ul>
+           <ol>
+               <li><a href="">糯米</a></li>
+               <li><a href="">新闻</a></li>
+               <li><a href="">hao123</a></li>
+               <li><a href="">地图</a></li>
+               <li><a href="">视频</a></li>
+               <li><a href="">贴吧</a></li>
+               <li><a href="">设置</a></li>
+               <li><a href="">糯米</a></li>
+               <li class="bg"><a href="">更多产品</a></li>
+           </ol>
+       </header>
+       <section>
+           <div>
+               <div class="banner">
+                   <img src="./img/img3.png"/>
+               </div>
+               <div class="form">
+                   <form action="">
+                       <input type="text"><button>百度一下</button>
+                   </form>
+               </div>
+               <div class="nav">
+                   <ul>
+                       <li class="bgcolor"><i class="fa fa-user-o"></i>我的关注</li>
+                       <li>推荐</li>
+                       <li>导航</li>
+                       <li>视频</li>
+                       <li>购物</li>
+                   </ul>
+                   <ol></ol>
+               </div>
+               <div class="main">
+                   <dl>
+                       <dt><img src="./img/img4.jpg"></dt>
+                       <dd>
+                           <h2>饮酒之后护肝保命，就用它了！身为中国人你偷着乐吧</h2>
+                           <span>凤凰时尚 01-01 06：15</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img5.jpg"></dt>
+                       <dd>
+                           <h2>期末考试背后的秘密</h2>
+                           <span>搜狐教育</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img4.jpg"></dt>
+                       <dd>
+                           <h2>饮酒之后护肝保命，就用它了！身为中国人你偷着乐吧</h2>
+                           <span>凤凰时尚 01-01 06：15</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img5.jpg"></dt>
+                       <dd>
+                           <h2>期末考试背后的秘密</h2>
+                           <span>搜狐教育</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img4.jpg"></dt>
+                       <dd>
+                           <h2>饮酒之后护肝保命，就用它了！身为中国人你偷着乐吧</h2>
+                           <span>凤凰时尚 01-01 06：15</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img5.jpg"></dt>
+                       <dd>
+                           <h2>期末考试背后的秘密</h2>
+                           <span>搜狐教育</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img4.jpg"></dt>
+                       <dd>
+                           <h2>饮酒之后护肝保命，就用它了！身为中国人你偷着乐吧</h2>
+                           <span>凤凰时尚 01-01 06：15</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img5.jpg"></dt>
+                       <dd>
+                           <h2>期末考试背后的秘密</h2>
+                           <span>搜狐教育</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img4.jpg"></dt>
+                       <dd>
+                           <h2>饮酒之后护肝保命，就用它了！身为中国人你偷着乐吧</h2>
+                           <span>凤凰时尚 01-01 06：15</span>
+                       </dd>
+                   </dl>
+                   <dl>
+                       <dt><img src="./img/img5.jpg"></dt>
+                       <dd>
+                           <h2>期末考试背后的秘密</h2>
+                           <span>搜狐教育</span>
+                       </dd>
+                   </dl>
+               </div>
+           </div>
+       </section>
+
+   </div>
+<script src="./js/zepto.min.js"></script>
+<script src="./js/iscroll5.js"></script>
+<script>
+    $(document).on("touchmove",function(e){
+        e.preventDefault();
+    })
+    var str=new IScroll("section");
+    $(".nav ul li").on("click",function(){
+        $(this).addClass("bgcolor").siblings().removeClass("bgcolor");
+    });
+    $("header ol li").on("click",function(){
+        $(this).addClass("bg").siblings().removeClass("bg");
+    });
+    $(".btn").on("click",function(){
+        $(".imag").show();
+    });
+    $(".imag img").on("click",function(){
+        srcc=$(this).attr('src');
+        $('.container').css({'background':"url("+srcc+")",'background-size':'contain'});
+        $(".imag").hide();
+    });
+
+
+</script>
+</body>
+</html>

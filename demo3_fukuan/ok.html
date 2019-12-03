@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<header class="head">
+			<div class="left_poin">
+				<img src="img/a93.png" class="pic"/>
+			</div>
+			<h2 class="tip">还款</h2>
+		</header>
+		<div class="main">
+			<div class="nav-content">
+				<a href="index.html">
+					<div class="line">
+						<span class="bg"></span>
+						<span class="bg"></span>
+					</div>
+					<dl>
+						<dt><img src="img/a98.png" alt="" /></dt>
+						<dd>收款方</dd>
+					</dl>
+				</a>
+				<a href="fukuan.html">
+					<div class="line">
+						<span class="bg"></span>
+						<span class="bg"></span>
+					</div>
+					<dl>
+						<dt><img src="img/a97.png" alt="" /></dt>
+						<dd>付款方</dd>
+					</dl>
+				</a>
+				<a href="javascript:;">
+					<div class="line">
+						<span class="bg"></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a96.png" alt="" /></dt>
+						<dd>确认</dd>
+					</dl>
+				</a>
+				<a href="cannel.html">
+					<div class="line">
+						<span></span>
+						<span></span>
+					</div>
+					<dl>
+						<dt><img src="img/a95.png" alt="" /></dt>
+						<dd>完成</dd>
+					</dl>
+				</a>
+			</div>
+			<div class="form_content">
+				<form id="myform">
+					<p>
+						<label>收款方卡号:</label><input type="text" name="scard" placeholder="请输入15-20位银行卡" required="卡号不能为空"/>
+					</p>
+					<p>
+						<label>收款方姓名:</label><input type="text" name="user" required="姓名不能为空"/>
+					</p>
+					<p>
+						<label>金额:</label><input type="number" placeholder="大于等于3元小于等于500元" required="金额不能为空" name="num"/>
+					</p>
+				</form>
+				<input type="button" value="确认转账" class="submit" />
+			</div>
+		</div>	
+	</div>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+	
+	$(".submit").on("click",function(){
+		location.href="cannel.html";
+	})
+	</script>
+</body>
+</html>
+</body>
+</html>

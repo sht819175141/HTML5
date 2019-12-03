@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column; }
+  .container header {
+    width: 100%;
+    height: 44px;
+    background: #1E2E45;
+    display: -webkit-flex;
+    position: relative;
+    line-height: 44px; }
+    .container header i {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #FEE5B0;
+      position: absolute;
+      left: 5px;
+      top: 4px; }
+    .container header span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff; }
+    .container header em {
+      width: 30px;
+      height: 44px;
+      position: absolute;
+      right: 10px; }
+      .container header em img {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-top: 5px; }
+  .container section {
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    overflow: hidden; }
+    .container section .list {
+      overflow: hidden;
+      position: relative; }
+      .container section .list .swiper-pagination {
+        position: absolute;
+        left: 0;
+        bottom: 10px; }
+      .container section .list img {
+        width: 100%;
+        height: 150px; }
+    .container section .list-dl {
+      width: 100%;
+      display: -webkit-flex;
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 10px; }
+      .container section .list-dl dl {
+        flex: 1; }
+        .container section .list-dl dl dt img {
+          width: 50px;
+          height: 50px; }
+    .container section .tit {
+      width: 100%;
+      height: 44px;
+      display: -webkit-flex;
+      position: relative;
+      line-height: 40px; }
+      .container section .tit span {
+        color: #0000bf;
+        padding-left: 10px; }
+      .container section .tit i {
+        position: absolute;
+        right: 20px;
+        font-style: normal;
+        color: #999; }
+      .container section .tit em {
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        font-style: normal; }
+    .container section .list-bar {
+      width: 100%; }
+      .container section .list-bar ul {
+        width: 320%;
+        display: -webkit-flex; }
+        .container section .list-bar ul li {
+          width: 135px;
+          height: 75px;
+          list-style: none;
+          margin-left: 5px;
+          margin-right: 5px; }
+          .container section .list-bar ul li img {
+            width: 100%;
+            height: 100%; }
+    .container section .list-bartwo {
+      width: 100%; }
+      .container section .list-bartwo ul {
+        width: 320%;
+        display: -webkit-flex; }
+        .container section .list-bartwo ul li {
+          width: 135px;
+          height: 75px;
+          list-style: none;
+          margin-left: 5px;
+          margin-right: 5px; }
+          .container section .list-bartwo ul li img {
+            width: 100%;
+            height: 100%; }
+    .container section .tittwo {
+      width: 100%;
+      height: 44px;
+      display: -webkit-flex;
+      position: relative;
+      line-height: 40px; }
+      .container section .tittwo span {
+        color: #0000bf;
+        padding-left: 10px; }
+      .container section .tittwo i {
+        position: absolute;
+        right: 20px;
+        font-style: normal;
+        color: #999; }
+      .container section .tittwo em {
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        font-style: normal; }
+    .container section .list-dltwo {
+      width: 100%;
+      display: -webkit-flex;
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 10px; }
+      .container section .list-dltwo dl {
+        flex: 1; }
+        .container section .list-dltwo dl dt img {
+          width: 50px;
+          height: 50px; }
+    .container section .tt {
+      width: 100%;
+      height: 44px;
+      display: -webkit-flex;
+      position: relative;
+      line-height: 40px; }
+      .container section .tt span {
+        color: #0000bf;
+        padding-left: 10px; }
+      .container section .tt i {
+        position: absolute;
+        right: 20px;
+        font-style: normal;
+        color: #999; }
+      .container section .tt em {
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        font-style: normal; }
+    .container section .dl-list {
+      width: 100%; }
+      .container section .dl-list dl {
+        width: 95%;
+        display: -webkit-flex;
+        margin: 0 auto; }
+        .container section .dl-list dl dt img {
+          display: inline-block;
+          width: 80px;
+          height: 80px; }
+        .container section .dl-list dl dd {
+          margin-left: 10px; }
+          .container section .dl-list dl dd .pp {
+            color: #333;
+            margin-top: 5px; }
+    .container section .icon {
+      width: 100%;
+      height: 40px;
+      position: relative;
+      line-height: 40px; }
+      .container section .icon ul {
+        display: -webkit-flex; }
+        .container section .icon ul li {
+          list-style: none;
+          margin-left: 25px; }
+          .container section .icon ul li img {
+            width: 20px;
+            height: 15px;
+            padding-right: 5px; }
+      .container section .icon b {
+        position: absolute;
+        right: 20px;
+        top: 0; }
+    .container section .dl-listtwo {
+      width: 100%; }
+      .container section .dl-listtwo dl {
+        width: 95%;
+        display: -webkit-flex;
+        margin: 0 auto; }
+        .container section .dl-listtwo dl dt img {
+          display: inline-block;
+          width: 80px;
+          height: 80px; }
+        .container section .dl-listtwo dl dd {
+          margin-left: 10px; }
+          .container section .dl-listtwo dl dd .pp {
+            color: #333;
+            margin-top: 22px; }
+    .container section .icontwo {
+      width: 100%;
+      height: 40px;
+      position: relative;
+      line-height: 40px; }
+      .container section .icontwo ul {
+        display: -webkit-flex; }
+        .container section .icontwo ul li {
+          list-style: none;
+          margin-left: 25px; }
+          .container section .icontwo ul li img {
+            width: 20px;
+            height: 15px;
+            padding-right: 5px; }
+      .container section .icontwo b {
+        position: absolute;
+        right: 20px;
+        top: 0; }
+    .container section .foot {
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      line-height: 40px; }
+  .container footer {
+    width: 100%;
+    height: 60px;
+    display: -webkit-flex;
+    text-align: center; }
+    .container footer dl {
+      flex: 1;
+      width: 100%; }
+      .container footer dl dt img {
+        width: 30px;
+        height: 30px; }
+
+/*# sourceMappingURL=demo.css.map */

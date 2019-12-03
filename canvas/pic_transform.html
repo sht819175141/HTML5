@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画图</title>
+	<style>
+		#box{
+			height: 150px;
+			width: 300px;
+			border:1px solid #ccc;
+		}
+		#mycvs{
+			border: 1px solid #ccc;
+			position: absolute;
+			left: 48px;
+			z-index: 9999;
+		}
+		#box .left{
+			width:40px;
+			background: yellow;
+			height: 150px;
+			float: left;
+			text-align: center;
+			font-size: 24px;
+		}
+		#box .middle{
+			width:220px;
+			background: #ccc;
+			height: 150px;
+			float: left;
+			text-align: center;
+			line-height: 150px;
+			position: relative;
+			font-size: 35px;
+			color: #f00;
+		}
+		#box .right{
+			width:40px;
+			background: yellow;
+			height: 150px;
+			float: left;
+			text-align: center;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="220" height="150" id="mycvs"></canvas>
+	<div id="box">
+		<div class="left">敢刮敢送</div>
+		<div class="middle">摩擦有惊喜</div>
+		<div class="right">有钱任性</div>
+	</div>
+
+	<script>
+		var mycvs=document.getElementById('mycvs')
+		var ctx=mycvs.getContext("2d");
+		var flg=false;
+
+		ctx.fillRect(0,0,220,150)
+
+		ctx.globalCompositeOperation="xor";
+
+		document.addEventListener("mousedown",function(e){
+			var x=e.pageX,
+				y=e.pageY;
+		
+				flg=true;
+				ctx.beginPath();
+				ctx.strokeStyle="#ccc";
+				ctx.lineWidth="30";
+				ctx.moveTo(x,y)
+		},false)
+
+		document.addEventListener("mousemove",function(e){
+			var x=e.pageX,
+				y=e.pageY;
+
+			if(flg){
+				ctx.lineTo(x,y)
+				ctx.stroke()
+			}
+			ctx.strokeStyle="#ccc";
+			ctx.lineWidth="20";
+			ctx.lineTo(x,y)
+			ctx.stroke();
+		},false)
+
+		document.addEventListener("mouseup",function(e){
+			flg=false;
+		},false)
+	</script>		
+</body>
+</html>

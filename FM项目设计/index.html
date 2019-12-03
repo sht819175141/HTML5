@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			width:100%;
+			height:100%;
+			position: relative;
+			background: url(images/bj2.jpg);
+		}
+		.box{
+			width:100%;
+			height:auto;
+		}
+		.img{
+			position:absolute;
+			bottom:-700px;
+			left:30%;
+			animation: shangyi 1s linear;
+			
+		}
+		@-webkit-keyframes shangyi{
+			0%{
+				position:absolute;
+				bottom:-900px;
+				left:30%;
+				margin-left:-250px;
+			}
+			100%{
+				position:absolute;
+				bottom:-700px;
+				left:30%;
+			}
+		}
+		@-webkit-keyframes xiayi{
+			0%{
+				position:absolute;
+				top:-255px;
+				left:0;
+			}
+			100%{
+				position:absolute;
+				top:0px;
+				left:0;
+			}
+		}
+		.images{
+			width:100%;
+			height:auto;
+			display:flex;
+			position:absolute;
+			top:0px;
+			left:0;
+			animation: xiayi 1s linear;
+		}
+
+		.images .im{
+			position:relative;
+		}
+		.images .im img{
+			width:50%;
+			padding:20px;
+		}
+		.ims1{
+			position:absolute;
+			left:0;
+			top:-5%;
+		}
+		.im:hover  .ims1 {
+			animation: xuanzhuan 3s ease-out infinite;
+		}
+		@-webkit-keyframes xuanzhuan{
+			0%{
+				transform: rotate(0deg);
+			}
+			12.5%{
+				transform: rotate(45deg);
+			}			
+			25%{
+				transform: rotate(90deg);
+			}	
+			37.5%{
+				transform: rotate(135deg);
+			}	
+			50%{
+				transform: rotate(180deg);
+			}
+			62.5%{
+				transform: rotate(225deg);
+			}			
+			75%{
+				transform: rotate(270deg);
+			}	
+			87.5%{
+				transform: rotate(315deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+		.images .im .uuu,.images .im .ims5{
+			position:absolute;
+			left:13%;
+			top:20%;
+			width:25%;
+			height:13%;
+		}
+		.images .im .ims5{
+			opacity:0;
+			
+		}
+		.im:hover .ims5{
+			animation: xianyina 0.5s ease infinite alternate;
+		}
+		@-webkit-keyframes xianyina{
+			0%{
+				opacity: 0;
+			}
+			49.99%{
+				opacity: 0;
+			}
+			50%{
+				opacity: 1;
+			}
+			100%{
+				opacity: 1;
+			}
+		}
+		.im:hover .uuu{
+			animation: xianyin 0.5s ease infinite alternate;
+		}
+		@-webkit-keyframes xianyin{
+			0%{
+				opacity: 1;
+			}
+			49.99%{
+				opacity: 1;
+			}
+			50%{
+				opacity: 0;
+			}
+			100%{
+				opacity: 0;
+			}
+		}
+		
+		.images .im .ims3{
+			position:absolute;
+			left:10%;
+			top:13%;
+			display:block;
+			width:30%;
+			height:20%;
+		}
+		.im:hover .ims3{
+			animation: tanqin 0.5s ease infinite alternate;
+		}
+		@-webkit-keyframes tanqin{
+			0%{
+				position:absolute;
+				left:10%;
+				top:12%;
+			}
+			100%{
+				position:absolute;
+				left:8%;
+				top:13%;
+			}
+		}
+
+		 .images .im .ims4{
+			position:absolute;
+			left:14%;
+			top:19%;
+			width:30%;
+			height:30%;
+		}
+		.im:hover  .ims4{
+			animation: shanzi 1s ease infinite alternate;
+		}
+		@-webkit-keyframes shanzi{
+			0%{
+				transform:rotate(-40deg);
+				transform-origin:70px 110px;
+			}
+			100%{
+				transform:rotate(0deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+			<div class="images">
+
+				<div class="im">
+					<img src="images/ICON1.png" alt="">
+					<img src="images/round.png" alt="" class="ims1">
+				</div>
+
+				<div class="im">
+					<img src="images/ICON2.png" alt="">
+					<img src="images/big.png" alt="" class="uuu">
+					<img src="images/small.png" alt="" class="ims5">
+				</div>
+
+				<div class="im">
+					<img src="images/ICON33.png" alt="">
+					<img src="images/hands.png" alt="" class="ims3">
+				</div>
+
+				<div class="im">
+					<img src="images/ICON4.png" alt="">
+					<img src="images/shanzi.png" alt="" class="ims4">
+				</div>
+
+			</div>
+		<img src="images/fly.png" alt="" class="img">
+	</div>
+</body>
+</html>

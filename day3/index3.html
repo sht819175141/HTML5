@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration:none;
+	}
+	.wrap{
+		width: 100%;
+		height: auto;
+		background: #F5F5F5; 
+	}
+	nav{
+		height: 44px;
+		background: #FA6702;
+		display: -webkit-box;
+		-webkit-box-align:center;/*垂直居中*/
+		-webkit-box-pack:justify;/*水平居中*/
+	}
+	nav h3{
+		width: 100px;
+		text-align: center;
+		color:#fff;
+	}
+	nav a{
+		display: inline-block;
+		width: 100px;
+	}
+	section{
+		height: 77px;
+		margin-top: 26px;
+	}
+
+	.process{
+		height:5px;
+		background: url("img/pro.png")
+	}
+	.process p{
+		width: 62.5%;
+		height: 5px;
+		background: #FA6702;
+	}
+	ul{
+		display: -webkit-box;
+		-webkit-box-align:center;
+		-webkit-box-pack:justify;
+	}
+	ul li{
+		width: 25%;
+		height: 40px;
+		text-align: center;
+		float: left;
+	}
+	ul li img{
+		
+		margin-right: 100px;
+	}
+	ol{
+		display: -webkit-box;
+		-webkit-box-align:center;
+		-webkit-box-pack:justify;
+	}
+	ol li{
+		width: 25%;
+		height: 40px;
+		text-align: center;
+	}
+	.main{
+		width: 90%;
+		margin: 0 auto;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	.bank{
+		height: 152px;
+		background: #fff;
+		border-radius: 15px;
+	}
+	.up{
+		display: -webkit-box;
+		box-sizing: border-box;
+	}
+	.up img{
+		-webkit-box-flex:1;
+	}
+	.up hgroup{
+		-webkit-box-flex:8;
+		padding-left: 20px;
+		
+		font-weight:normal;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		-webkit-box-pack:center;
+	}
+	.down{
+		box-sizing: border-box;
+		border-top:1px solid #ccc;
+		
+	}
+	.down span{
+		display: block;
+		padding-left: 75px;
+		line-height:30px;
+
+
+	}
+	.user{
+		margin-top: 15px;
+		background: #fff;
+		border-radius: 15px;
+		height: 128px;
+	}
+	.next button{
+		background: #FA6702;
+		height: 40px;
+		width: 100%;
+		border-radius: 13px;
+		color:#fff;
+	}
+
+	
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<nav>
+		<a href="#"><img src="img/logo.png"></a>
+			<h3>还款</h3>
+		<a href="#"></a>
+		</nav>
+<main class="main">
+			<section>
+			<div class="process">
+				<p></p>
+			</div>
+				<ul>
+			<a href="./index.html">
+				<li> <img src="img/one.png" alt=""></li>
+			</a>
+			<a href="./index2.html">
+				<li><img src="img/two.png" alt=""></li>
+			</a>			
+			<a href="./index3.html">
+			<li><img src="img/rthree.png" alt=""></li>
+			</a>
+			<a href="./index4.html">
+			<li><img src="img/four.png" alt=""></li>
+			</a>
+				
+			</ul>
+			<ol>
+				<li>收款方</li>
+				<li>付款方</li>
+				<li>确认</li>
+				<li>完成</li>
+			</ol>
+		</section>
+		<section class="bank">
+			<div class="up">
+				<img src="img/fu.png" alt="">
+				<hgroup>
+					<h3>工商银行</h3>
+					<h4>2654 2654 2654 2654</h4>
+				</hgroup>
+			</div>
+		<div class="down">
+		
+			<span>转账金额:500元</span>
+			<span>手续费:0元</span>
+			<span>交易金额:500元</span>
+		
+		
+		</div>
+		</section>
+		<section class="user">
+				<div class="up">
+				<img src="img/shou.png" alt="">
+				<hgroup>
+					<span></span>
+					<h3>刘宇</h3>
+					
+				</hgroup>
+			</div>
+		<div class="down">
+		
+			<span>工商银行</span>
+			<span>2654 2654 2654 2654</span>
+			
+		
+		
+		</div>
+		</section>
+		<section class="next">
+			<button id="next" type="submit">下一步</button>
+		</section>
+</main>
+<script>
+	var next=document.getElementById('next');
+	var obj=JSON.parse(localStorage.getItem("#form"))
+	console.log(obj)
+	next.onclick=function(){
+		location.href="./index4.html"
+	}
+</script>
+
+	</div>
+</body>
+</html>
